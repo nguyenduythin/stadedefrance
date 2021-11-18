@@ -11,10 +11,10 @@
     <div class="header-inner  fl-wrap">
         <div class="container">
             <div class="header-container fl-wrap">
-                <a href="index.html" class="logo-holder"><img src="{{ asset('client/images/logo.png') }}" alt=""></a>
-                <div class="show-reserv_button show-rb"><span>Reservation</span> <i class="fal fa-bookmark"></i></div>
+                <a href="{{ route('home') }}" class="logo-holder"><img src="{{ asset('client/images/logo.png') }}" alt=""></a>
+                <div class="show-reserv_button show-rb"><span>Booking Now</span> <i class="fal fa-bookmark"></i></div>
                 <div class="show-share-btn showshare htact"><i class="fal fa-bullhorn"></i> <span class="header-tooltip">Share</span></div>
-                <div class="show-cart sc_btn htact"><i class="fal fa-shopping-bag"></i><span class="show-cart_count">3</span><span class="header-tooltip">Your Cart</span></div>
+                {{-- <div class="show-cart sc_btn htact"><i class="fal fa-shopping-bag"></i><span class="show-cart_count">3</span><span class="header-tooltip">Your Cart</span></div> --}}
                 <!-- nav-button-wrap-->
                 <div class="nav-button-wrap">
                     <div class="nav-button">
@@ -26,7 +26,7 @@
                 @include('client.layouts.nav')
                 <!-- navigation  end -->                        
                 <!-- header-cart_wrap  -->
-                <div class="header-cart_wrap novis_cart">
+                {{-- <div class="header-cart_wrap novis_cart">
                     <div class="header-cart_title">Your Cart <span>4 items</span></div>
                     <div class="header-cart_wrap_container fl-wrap">
                         <div class="box-widget-content">
@@ -67,7 +67,7 @@
                         <a href="cart.html"> View Cart</a>
                         <a href="checkout.html">  Checkout</a>
                     </div>
-                </div>
+                </div> --}}
                 <!-- header-cart_wrap end  -->
                 <!-- share-wrapper -->
                 <div class="share-wrapper isShare">
