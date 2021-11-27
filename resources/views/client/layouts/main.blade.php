@@ -31,7 +31,17 @@
         @include('client.layouts.header')
         <!--header end -->
         <!-- wrapper  -->
-        @yield('content')
+        
+
+        <div id="wrapper">
+            <!-- content  -->	
+            @yield('content')
+            <!-- content end  -->
+            <!-- footer -->
+            <div class="height-emulator fl-wrap"></div>
+          @include('client.layouts.footer')
+            <!-- footer end-->                             
+        </div>
 
         <!-- reservation-modal-wrap-->
         <div class="reservation-modal-wrap">

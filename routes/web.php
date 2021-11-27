@@ -19,15 +19,28 @@ Route::get('/', function () {
 Route::get('/news', function () {
     return view('client.pages.news');
 })->name('news');
+Route::get('/news/detail', function () {
+    return view('client.pages.news-detail');
+})->name('news.detail');
 Route::get('/gallery', function () {
     return view('client.pages.gallery');
 })->name('gallery');
 Route::get('/contact', function () {
     return view('client.pages.contact');
 })->name('contact');
-Route::get('/about', function () {
-    return view('client.pages.about');
-})->name('about');
+Route::get('/event', function () {
+    return view('client.pages.event');
+})->name('event');
 Route::get('/menu', function () {
     return view('client.pages.menu');
 })->name('menu');
+
+//admin
+Route::prefix('admin-stadedefrance')->group(function () {
+    Route::get('/', function () {
+        return view('admin.pages.dashboard');
+    })->name('admin.main');
+    Route::get('/booking', function () {
+        return view('admin.pages.booking');
+    })->name('admin.booking.list');
+});
