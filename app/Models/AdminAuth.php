@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Slider extends Model
+
+class AdminAuth extends Authenticatable
 {
     use HasFactory;
-    
-    protected $table = 'silders';
-    public $fillable = ['no','image','status','title','short_description'];
+    protected $table = 'admin_auth';
 }

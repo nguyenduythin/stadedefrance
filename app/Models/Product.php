@@ -10,5 +10,15 @@ class Product extends Model
     use HasFactory;
     
     protected $table = 'products';
-    public $fillable = ['name'	,'image',	'description'	,'price'	,'cate_pd_id'];
+    public $fillable = ['name','image','description','price','cate_pd_id'];
+
+    /**
+     * Get the user that owns the Product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function cate()
+    {
+        return $this->belongsTo(CategoryProduct::class, 'cate_pd_id');
+    }
 }

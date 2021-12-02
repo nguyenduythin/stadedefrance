@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\CategoryProduct;
 use Illuminate\Http\Request;
 
 class CateProductController extends Controller
@@ -14,7 +15,8 @@ class CateProductController extends Controller
      */
     public function index()
     {
-        //
+        $cate = CategoryProduct::all();
+        return response()->json($cate);
     }
 
     /**
@@ -25,7 +27,14 @@ class CateProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new CategoryProduct();
+        $model->fill($request->all());
+        $query =  $model->save();
+        if (!$query) {
+            return response()->json(['code' => 0, 'msg' => 'Thêm mới không thành công !']);
+        } else {
+            return response()->json(['code' => 1, 'msg' => 'Thêm mới thành công !']);
+        }
     }
 
     /**
@@ -36,7 +45,8 @@ class CateProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $model = CategoryProduct::find($id);
+        return response()->json($model);
     }
 
     /**
@@ -46,9 +56,16 @@ class CateProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $model = CategoryProduct::find($request->id);
+        $model->fill($request->all());
+        $query = $model->save();
+        if (!$query) {
+            return response()->json(['code' => 0, 'msg' => 'Sửa mới không thành công !']);
+        } else {
+            return response()->json(['code' => 1, 'msg' => 'Sửa mới thành công !']);
+        }
     }
 
     /**
@@ -59,6 +76,8 @@ class CateProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = CategoryProduct::find($id);
+        $model->delete();
+        return  response()->json(['success' => 'Xóa thành công!']);
     }
 }

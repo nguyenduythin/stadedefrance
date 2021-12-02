@@ -9,8 +9,9 @@
     <div class="content-header row">
     </div>
     <div class="content-body">
-      <h3>Danh sách quyền</h3>
-      <p>Mỗi danh mục (Cơ bản, Chuyên nghiệp và Kinh doanh) bao gồm bốn vai trò được xác định trước được hiển thị bên dưới.</p>
+      <h3>Danh sách đặt lịch</h3>
+      <p>Mỗi danh mục (Cơ bản, Chuyên nghiệp và Kinh doanh) bao gồm bốn vai trò được xác định trước được hiển thị bên
+        dưới.</p>
 
       <!-- Permission Table -->
       <div class="card">
@@ -27,7 +28,7 @@
                 <th>Số lượng người</th>
                 <th>Trạng thái</th>
                 <th></th>
-                
+
 
               </tr>
             </thead>
@@ -47,7 +48,7 @@
                 <h1 class="mb-1">Thêm mới quyền</h1>
                 <p>Các quyền bạn có thể sử dụng và gán cho người dùng của mình.</p>
               </div>
-              <form id="addPermissionForm" method="POST" action="" class="row">
+              <form id="addBookingForm" method="POST" action="{{ route('booking.add.api') }}" class="row">
                 <div class="col-12">
                   <label class="form-label" for="modalPermissionName">Permission Name</label>
                   <input type="text" id="modalPermissionName" name="name" class="form-control"
@@ -72,51 +73,79 @@
         </div>
       </div>
       <!--/ Add Permission Modal -->
-      <!-- Edit Permission Modal -->
-      <div class="modal fade" id="editPermissionModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+      <!-- Edit User Modal -->
+      <div class="modal fade show" id="editUserModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-edit-user">
           <div class="modal-content">
             <div class="modal-header bg-transparent">
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body p-3 pt-0">
+            <div class="modal-body pb-5 px-sm-5 pt-50">
               <div class="text-center mb-2">
-                <h1 class="mb-1">Edit Permission</h1>
-                <p>Edit permission as per your requirements.</p>
+                <h1 class="mb-1">Cập nhật mới đặt lịch</h1>
+                <p>Cập nhập chi tiết đặt lịch mới !</p>
               </div>
+              <form id="editBookingForm" action="{{ route('booking.update.api') }}" method="POST" class="row gy-1 pt-75"
+                enctype="multipart/form-data">
+                @csrf
+                <input type="text" name="id" hidden>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="modalEditUserFirstName">Họ và tên</label>
+                  <input type="text" id="modalEditUserFirstName" name="full_name" class="form-control"
+                    placeholder="Sơn Móng Tay" />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="modalEditUserFirstName">Email</label>
+                  <input type="email" id="modalEditUserFirstName" name="email" class="form-control"
+                    placeholder="Sơn Móng Tay" />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="modalEditUserFirstName">Số điện thoại</label>
+                  <input type="number" data-type="currency" id="modalEditUserFirstName full_name" name="phone"
+                    class="form-control" placeholder="100,000₫" />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="modalEditUserFirstName">Số lượng người</label>
+                  <input type="number" data-type="currency" id="modalEditUserFirstName full_name" name="persons"
+                    class="form-control" placeholder="100,000₫" />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="fp-date">Ngày</label>
+                  <input type="text" id="fp-date" name="date" class="form-control flatpickr-basic"
+                    placeholder="YYYY-MM-DD" />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="fp-time">Thời gian</label>
+                  <input type="text" id="fp-time" class="form-control flatpickr-time text-start flatpickr-input"
+                    name="time" placeholder="HH:MM" style="height:auto !important;" />
+                </div>
 
-              <div class="alert alert-warning" role="alert">
-                <h6 class="alert-heading">Warning!</h6>
-                <div class="alert-body">
-                  By editing the permission name, you might break the system permissions functionality. Please ensure
-                  you're
-                  absolutely certain before proceeding.
+                <div class="col-12 col-md-12">
+                  <label class="form-label" for="modalEditUserFirstName">Trạng thái</label>
+                  <select name="status" id="status" class="form-control">
+                    <option value="1" id="1">Chờ Xác nhận</option>
+                    <option value="2" id="2">Đã xác nhận</option>
+                    <option value="3" id="3">Thành Công</option>
+                  </select>
                 </div>
-              </div>
-
-              <form id="editPermissionForm" class="row" method="POST" action="">
-                <div class="col-sm-9">
-                  <input type="hidden" name="id">
-                  <label class="form-label" for="editPermissionName">Permission Name</label>
-                  <input type="text"  name="name" class="form-control"
-                    placeholder="Enter a permission name" tabindex="-1" data-msg="Please enter permission name" />
+                <div class="col-12 ">
+                  <label class="form-label" for="modalEditUserCountry">Tin nhắn</label>
+                  <textarea class="form-control" name="message"
+                    placeholder="Những dịch vụ chuyên nghiệp hứa hẹn sẽ đem lại trải nghiệm tuyệt vời cho quý khách !"
+                    id="message" cols="30" rows="4"></textarea>
                 </div>
-             
-                <div class="col-sm-3 ps-sm-0">
-                  <button type="submit" class="btn btn-primary mt-2">Update</button>
-                </div>
-                <div class="col-12 mt-75">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="editCorePermission" />
-                    <label class="form-check-label" for="editCorePermission"> Set as core permission </label>
-                  </div>
+                <div class="col-12 text-center mt-2 pt-50">
+                  <button type="submit" class="btn btn-primary me-1">Submit</button>
+                  <button type="reset" class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">
+                    Discard
+                  </button>
                 </div>
               </form>
             </div>
           </div>
         </div>
       </div>
-      <!--/ Edit Permission Modal -->
+      <!--/ Edit User Modal -->
 
     </div>
   </div>
@@ -128,15 +157,6 @@
 <script>
   $(function () {
   'use strict';
-    // assetPath = '../../../app-assets/',
-    // dt_permission,
-    // userList = 'app-user-list.html';
-
-  // if ($('body').attr('data-framework') === 'laravel') {
-  //   assetPath = $('body').attr('data-asset-path');
-  //   userList = assetPath + 'app/user/list';
-  // }
-
   // Users List datatable
   var table =  $('.datatables-permissions').DataTable({
       ajax:  {
@@ -177,14 +197,22 @@
           targets: 2,
           // orderable: false
         },
-        // {
-        //   targets: 3,
-        //   render: function (e, t, a, s) {
-        //       return  a.roles.map(data => 
-        //           (`<span class="badge rounded-pill badge-light-dark " text-capitalized>${data.name}</span>`)
-        //         ).join(" ") ;
-        //   },
-        // },
+        {
+                    targets: 7,
+                    render: function(e, t, a, s) {
+                        var n = a.status;
+                        if (n == 1) {
+                            return ('<span class="badge rounded-pill badge-light-warning" text-capitalized>Chờ xác nhận</span>')
+                        }
+                        else  if (n == 2) {
+                            return ('<span class="badge rounded-pill badge-light-primary" text-capitalized>Xác nhận thành công</span>')
+                        }
+                        else if (n == 3) {
+                            return ('<span class="badge rounded-pill badge-light-success" text-capitalized>Thành công</span>')
+                        }
+                       
+                    },
+                },
         {
           // Actions
           targets: -1,
@@ -192,10 +220,10 @@
           orderable: false,
           render: function (data, type, full, meta) {
             return (
-              '<button class="btn btn-sm btn-icon" data-bs-toggle="modal" data-bs-target="#editPermissionModal" id="editPermission" data-id="'+full.id+'">' +
+              '<button class="btn btn-sm btn-icon" data-bs-toggle="modal" data-bs-target="#editUserModal" id="editBooking" data-id="'+full.id+'">' +
               feather.icons['edit'].toSvg({ class: 'font-medium-2 text-body' }) +
               '</i></button>' +
-              '<button class="btn btn-sm btn-icon delete-record" id="deletePermission" data-id="'+full.id+'">' +
+              '<button class="btn btn-sm btn-icon delete-record" id="deleteBooking" data-id="'+full.id+'">' +
               feather.icons['trash'].toSvg({ class: 'font-medium-2 text-body' }) +
               '</button>'
             );
@@ -220,50 +248,74 @@
       // Buttons with Dropdown
       buttons: [
         {
-          text: 'Thêm mới quyền',
-          className: 'add-new btn btn-primary mt-50',
-          attr: {
-            'data-bs-toggle': 'modal',
-            'data-bs-target': '#addPermissionModal'
+          extend: "collection",
+          className: "btn btn-outline-secondary dropdown-toggle me-2",
+          text: feather.icons["external-link"].toSvg({
+              class: "font-small-4 me-50",
+          }) + "Export",
+          buttons: [{
+                  extend: "print",
+                  text: feather.icons.printer.toSvg({
+                      class: "font-small-4 me-50",
+                  }) + "Print",
+                  className: "dropdown-item",
+                  exportOptions: {
+                      columns: [0, 1, 2, 3, 4]
+                  },
+              },
+              {
+                  extend: "csv",
+                  text: feather.icons["file-text"].toSvg({
+                      class: "font-small-4 me-50",
+                  }) + "Csv",
+                  className: "dropdown-item",
+                  exportOptions: {
+                      columns: [0, 1, 2, 3, 4]
+                  },
+              },
+              {
+                  extend: "excel",
+                  text: feather.icons.file.toSvg({
+                      class: "font-small-4 me-50",
+                  }) + "Excel",
+                  className: "dropdown-item",
+                  exportOptions: {
+                      columns: [0, 1, 2, 3, 4]
+                  },
+              },
+              {
+                  extend: "pdf",
+                  text: feather.icons.clipboard.toSvg({
+                      class: "font-small-4 me-50",
+                  }) + "Pdf",
+                  className: "dropdown-item",
+                  exportOptions: {
+                      columns: [0, 1, 2, 3, 4]
+                  },
+              },
+              {
+                  extend: "copy",
+                  text: feather.icons.copy.toSvg({
+                      class: "font-small-4 me-50",
+                  }) + "Copy",
+                  className: "dropdown-item",
+                  exportOptions: {
+                      columns: [0, 1, 2, 3, 4]
+                  },
+              },
+          ],
+          init: function(e, t, a) {
+              $(t).removeClass("btn-secondary"),
+                  $(t).parent().removeClass("btn-group"),
+                  setTimeout(function() {
+                      $(t)
+                          .closest(".dt-buttons")
+                          .removeClass("btn-group")
+                          .addClass("d-inline-flex mt-50");
+                  }, 50);
           },
-          init: function (api, node, config) {
-            $(node).removeClass('btn-secondary');
-          }
-        }
+      }
       ],
-      // For responsive popup
-      // responsive: {
-      //   details: {
-      //     display: $.fn.dataTable.Responsive.display.modal({
-      //       header: function (row) {
-      //         var data = row.data();
-      //         return 'Details of Permission';
-      //       }
-      //     }),
-      //     type: 'column',
-      //     renderer: function (api, rowIdx, columns) {
-      //       var data = $.map(columns, function (col, i) {
-      //         return col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
-      //           ? '<tr data-dt-row="' +
-      //               col.rowIndex +
-      //               '" data-dt-column="' +
-      //               col.columnIndex +
-      //               '">' +
-      //               '<td>' +
-      //               col.title +
-      //               ':' +
-      //               '</td> ' +
-      //               '<td>' +
-      //               col.data +
-      //               '</td>' +
-      //               '</tr>'
-      //           : '';
-      //       }).join('');
-
-      //       return data ? $('<table class="table"/><tbody />').append(data) : false;
-      //     }
-      //   }
-      // },
       language: {
         paginate: {
           // remove previous & next text from pagination
@@ -273,7 +325,7 @@
       },
       
     });
-var  a = $("#addPermissionForm");
+var  a = $("#addBookingForm");
 // var response;
 //   $.validator.addMethod(
 //       "uniquePName", 
@@ -327,8 +379,8 @@ a.length && (a.validate({
 
 
 // Delete permission
-  $('body').on('click' ,'#deletePermission' , function(){
-    var user_id = $(this).data("id");
+  $('body').on('click' ,'#deleteBooking' , function(){
+    var booking_id = $(this).data("id");
     Swal.fire({
           title: "Bạn có chắc chắn?",
           text: "Bạn sẽ không thể hoàn tác!",
@@ -345,57 +397,74 @@ a.length && (a.validate({
               if (t.value) {
                   $.ajax({
                       type:"DELETE",
-                      url:"{{ route('booking.list.api') }}"+"/"+user_id,
+                      url:"{{ route('booking.list.api') }}"+"/"+booking_id,
                       headers: {
                               'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                           },
                   success: function(){
                       table.ajax.reload();
-                      toastr.success("Xóa Thành Công");
+                      toastr.success("Xóa Thành Công!");
                   },
                   error:function () {
-                      toastr.error("Xóa không Thành Công");
+                      toastr.error("Xóa không Thành Công!");
                   }
               })
               } 
           });
 
 });
-// get detail edit
-$('body').on('click' ,'#editPermission' , function(){
-    var permission_id = $(this).data("id");
-    $.get('<?= route("booking.list.api") ?>'+"/show/"+permission_id , function (data) {
-        var form = $('#editPermissionForm');
-        form.find('input[name="id"]').val(data.id); 
-        form.find('input[name="name"]').val(data.name);    
-
-    },'json')
-});
-// submit edit in db
-$('#editPermissionForm').on('submit', function(e){
-    e.preventDefault();
-    var form = this;
-    $.ajax({
-        type:"POST",
-        url:$(form).attr('action'),
-        data: new FormData(form),
-        processData: false,
-        dataType:'json',
-        contentType: false,
-        headers: {
+  // get detail edit và selected cate đã chọn
+  $('body').on('click', '#editBooking', function() {
+            var user_id = $(this).data("id");
+            var cate = null;
+            $.get('<?= route("booking.list.api") ?>' + "/show/" + user_id, function(data) {
+                var form = $('#editBookingForm');
+                form.find('input[name="id"]').val(data.id);
+                form.find('input[name="full_name"]').val(data.full_name);
+                form.find('input[name="date"]').val(data.date);
+                form.find('input[name="time"]').val(moment(data.time,"HH:mm:ss").format('hh:mm'));
+                console.log(moment(data.time,"HH:mm:ss").format('hh:mm A').slice(0,5));
+                form.find('input[name="phone"]').val(data.phone);
+                form.find('input[name="email"]').val(data.email);
+                form.find('input[name="persons"]').val(data.persons);
+                form.find('#message').val(data.message);
+                $("#status").find("#" + data.status, "option").attr('selected', true);
+              
+            }, 'json')
+         
+        });
+        // submit edit in db
+        $('#editBookingForm').on('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            $.ajax({
+                type: "POST",
+                url: $(form).attr('action'),
+                data: new FormData(form),
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+                headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-        success: function(data){
-                $(form)[0].reset();
-                $('#editPermissionModal').modal("hide");
-                table.ajax.reload();
-                toastr.success(data.msg)
-        },
-        error:function (error) {
-            console.log("Sửa mới không thành công",error);
-        }
-    })
-});
+                success: function(data) {
+                    if (data.code == 0) {
+                        $.each(data.error, function(prefix, val) {
+                            $(form).find('span' + prefix + '_error').text(val[0]);
+                        });
+                    } else {
+                        console.log('fomr', data);
+                        $(form)[0].reset();
+                        $('#editUserModal').modal("hide");
+                        table.ajax.reload();
+                        toastr.success(data.msg)
+                    }
+                },
+                error: function(error) {
+                    console.log("Sửa mới không thành công", error);
+                }
+            })
+        });
 
 
 

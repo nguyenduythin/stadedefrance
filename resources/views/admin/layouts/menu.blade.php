@@ -49,26 +49,25 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a class="d-flex align-items-center" href="index-2.html"><i
+            <li class=" nav-item {{ request()->is('admin-stadedefrance') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{ route('admin.dashboard') }}"><i
                         data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Thống
                         kê</span></a>
-
             </li>
             <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Booking</span><i
                     data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-kanban.html"><i
+            <li class=" nav-item {{ request()->is('admin-stadedefrance/booking*') ? 'active' : '' }} "><a class="d-flex align-items-center" href="{{ route('admin.booking.list') }}"><i
                         data-feather='calendar'></i><span class="menu-title text-truncate" data-i18n="Kanban">Đặt
                         lịch</span></a>
             </li>
             <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Menu</span><i
                     data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-email.html"><i
+            <li class=" nav-item {{ request()->is('admin-stadedefrance/product*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{ route('admin.product.list') }}"><i
                         data-feather='box'></i><span class="menu-title text-truncate" data-i18n="Email">Sản
                         phẩm</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-chat.html"><i
+            <li class=" nav-item {{ request()->is('admin-stadedefrance/cate-product*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{ route('admin.cate.product.list') }}"><i
                         data-feather='list'></i><span class="menu-title text-truncate" data-i18n="Chat">Danh
                         mục</span></a>
             </li>
@@ -79,21 +78,21 @@
             
             <li class=" nav-item"><a class="d-flex align-items-center" href="app-todo.html"><i data-feather='video'></i><span class="menu-title text-truncate" data-i18n="Todo">Video</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-todo.html"><i
+            <li class=" nav-item {{ request()->is('admin-stadedefrance/gallery*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{ route('admin.gallery.list') }}"><i
                         data-feather='image'></i><span class="menu-title text-truncate" data-i18n="Todo">Thư viện
                         ảnh</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-calendar.html"><i
+            <li class=" nav-item {{ request()->is('admin-stadedefrance/cate-gallery*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="app-calendar.html"><i
                         data-feather='list'></i><span class="menu-title text-truncate" data-i18n="Calendar">Danh mục
                         ảnh</span></a>
             </li>
             <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Truyền thông</span><i
                     data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather='cast'></i><span
+            <li class=" nav-item {{ request()->is('admin-stadedefrance/event*') ? 'active' : '' }}"><a class="d-flex align-items-center " href="#"><i data-feather='cast'></i><span
                         class="menu-title text-truncate" data-i18n="Invoice">Sự kiện</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-email.html"><i
+            <li class=" nav-item {{ request()->is('admin-stadedefrance/new*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="app-email.html"><i
                         data-feather='file-text'></i><span class="menu-title text-truncate" data-i18n="Email">Tin
                         tức</span></a>
             </li>
@@ -104,7 +103,7 @@
             <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Stadedefrance</span><i
                     data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-kanban.html"><i
+            <li class=" nav-item {{ request()->is('admin-stadedefrance/slider*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="app-kanban.html"><i
                         data-feather='sliders'></i><span class="menu-title text-truncate"
                         data-i18n="Kanban">Silder</span></a>
             </li>
@@ -112,7 +111,7 @@
             {{-- <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather='phone'></i><span
                         class="menu-title text-truncate" data-i18n="Invoice">Liện hệ</span></a>
             </li> --}}
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-kanban.html"><i
+            <li class=" nav-item {{ request()->is('admin-stadedefrance/setting*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="app-kanban.html"><i
                         data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="Kanban">Thông
                         tin</span></a>
             </li>

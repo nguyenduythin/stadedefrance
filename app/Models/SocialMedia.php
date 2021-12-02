@@ -10,5 +10,5 @@ class SocialMedia extends Model
     use HasFactory;
     
     protected $table = 'social_media';
-    public $fillable = ['link'	,'icon',	'name'	,'display'];
+    public $fillable = ['link','icon','name','display'];
 }

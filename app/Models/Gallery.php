@@ -11,4 +11,8 @@ class Gallery extends Model
     
     protected $table = 'galleries';
     public $fillable = ['url','cate_gallery_id'];
+    public function cate()
+    {
+        return $this->belongsTo(CategoryGallery::class, 'cate_gallery_id');
+    }
 }

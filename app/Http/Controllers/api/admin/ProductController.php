@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\api\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -14,7 +16,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        $products->load('cate');
+        return response()->json($products);
     }
 
     /**
@@ -25,7 +29,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new Product();
+        $model->fill($request->all());
+        if ($request->hasFile('image')) {
+            $model->image = $request->file('image')->storeAs('/images/products', uniqid() . '-' . $request->image->getClientOriginalName());
+        }
+        $query =  $model->save();
+        if (!$query) {
+            return response()->json(['code' => 0, 'msg' => 'Thêm mới không thành công !']);
+        } else {
+            return response()->json(['code' => 1, 'msg' => 'Thêm mới thành công !']);
+        }
     }
 
     /**
@@ -36,7 +50,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $model = Product::find($id);
+        return response()->json($model);
     }
 
     /**
@@ -46,9 +61,19 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $model = Product::find($request->id);
+        $model->fill($request->all());
+        if ($request->hasFile('image')) {
+            $model->image = $request->file('image')->storeAs('/images/products', uniqid() . '-' . $request->image->getClientOriginalName());
+        }
+        $query =  $model->save();
+        if (!$query) {
+            return response()->json(['code' => 0, 'msg' => 'Sửa mới không thành công !']);
+        } else {
+            return response()->json(['code' => 1, 'msg' => 'Sửa mới thành công !']);
+        }
     }
 
     /**
@@ -59,6 +84,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $products = Product::find($id);
+        Storage::delete($products->image);
+        $products->delete();
+        return  response()->json(['success' => 'Xóa thành công!']);
     }
 }
