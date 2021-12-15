@@ -10,5 +10,5 @@ class Setting extends Model
     use HasFactory;
     
     protected $table = 'settings';
-    public $fillable = ['logo','phone','email','slogan','about','author','address'];
+    public $fillable = ['logo','phone','open_store','closed_store','email','slogan','about','author','address','display'];
 }

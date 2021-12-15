@@ -14,10 +14,12 @@ class GalleryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $gallery = Gallery::all();
-        $gallery->load('cate');
+        // $gallery = Gallery::all();
+        // $gallery->load('cate');
+        // return  response()->json($gallery);
+        $gallery = Gallery::where('cate_gallery_id',$id)->get();
         return  response()->json($gallery);
     }
 
@@ -35,10 +37,12 @@ class GalleryController extends Controller
             $model->url = $request->file('url')->storeAs('/images/gallery', uniqid() . '-' . $request->url->getClientOriginalName());
         }
         $query =  $model->save();
+        $galleryFirsy = Gallery::orderBy('created_at', 'desc')->first();
+
         if (!$query) {
             return response()->json(['code' => 0, 'msg' => 'Thêm mới không thành công !']);
         } else {
-            return response()->json(['code' => 1, 'msg' => 'Thêm mới thành công !']);
+            return response()->json($galleryFirsy);
         }
     }
 

@@ -10,5 +10,5 @@ class News extends Model
     use HasFactory;
     
     protected $table = 'news';
-    public $fillable = ['title'	,'galleries_new_id',	'image'	,'content'	,'viewer'];
+    public $fillable = ['title','image'	,'content','viewer'];
 }

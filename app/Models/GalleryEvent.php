@@ -10,5 +10,5 @@ class GalleryEvent extends Model
     use HasFactory;
     
     protected $table = 'galleries_event';
-    public $fillable = ['url'];
+    public $fillable = ['url','event_id'];
 }

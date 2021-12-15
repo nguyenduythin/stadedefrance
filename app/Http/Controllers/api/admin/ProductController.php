@@ -64,9 +64,13 @@ class ProductController extends Controller
     public function update(Request $request)
     {
         $model = Product::find($request->id);
+        if ($request->hasFile('image')) {
+            Storage::delete($model->image);
+        }
         $model->fill($request->all());
         if ($request->hasFile('image')) {
             $model->image = $request->file('image')->storeAs('/images/products', uniqid() . '-' . $request->image->getClientOriginalName());
+            
         }
         $query =  $model->save();
         if (!$query) {

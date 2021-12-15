@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\CategoryGallery;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,6 +18,7 @@ class CateGalleryController extends Controller
     public function index()
     {
         $products = CategoryGallery::all();
+        $products->load('gallery');
         return response()->json($products);
     }
 
@@ -63,9 +65,13 @@ class CateGalleryController extends Controller
     public function update(Request $request)
     {
         $model = CategoryGallery::find($request->id);
+        if ($request->hasFile('image')) {
+            Storage::delete($model->image);
+        }
+
         $model->fill($request->all());
         if ($request->hasFile('image')) {
-            $model->image = $request->file('image')->storeAs('/images/products', uniqid() . '-' . $request->image->getClientOriginalName());
+            $model->image = $request->file('image')->storeAs('/images/cate-gallery', uniqid() . '-' . $request->image->getClientOriginalName());
         }
         $query =  $model->save();
         if (!$query) {
@@ -84,6 +90,13 @@ class CateGalleryController extends Controller
     public function destroy($id)
     {
         $products = CategoryGallery::find($id);
+        Storage::delete($products->image);
+        $model = Gallery::where('cate_gallery_id', $id)->get();
+        foreach ($model as $value) {
+            $onlyG = Gallery::find($value->id);
+            Storage::delete($value->url);
+            $onlyG->delete();
+        }
         Storage::delete($products->image);
         $products->delete();
         return  response()->json(['success' => 'Xóa thành công!']);

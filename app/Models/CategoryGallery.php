@@ -11,4 +11,8 @@ class CategoryGallery extends Model
     
     protected $table = 'categories_gallery';
     public $fillable = ['name'	,'image',	'description',	'date'	];
+    
+    public function gallery(){
+        return $this->hasMany(gallery::class,'cate_gallery_id');
+    }
 }

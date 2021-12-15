@@ -21,9 +21,10 @@
                         <table class="user-list-table table" id="DataTables_Table_User">
                             <thead class="table-light">
                                 <tr>
+                                    <th>No</th>
                                     <th>Tên danh mục</th>
                                     <th>Ảnh </th>
-                                    <!-- <th>Mô Tả Chi Tiết</th> -->
+                                    <th>Đếm số lượng ảnh</th>
                                     <th>Hành Động</th>
                                 </tr>
                             </thead>
@@ -46,20 +47,32 @@
                                         @csrf
                                         <input type="text" name="id" hidden>
                                         <div class="col-12 col-md-12">
-                                            <label class="form-label" for="modalEditUserFirstName">Ảnh Combo</label>
+                                            <label class="form-label" for="modalEditUserFirstName">Ảnh Danh mục</label>
                                             <input type="file" id="modalEditUserFirstName full_name" name="image"
                                                 class="form-control" accept="image/*" />
                                         </div>
-                                        <div class="col-12 col-md-12">
+                                        <div class="col-12 col-md-6">
                                             <label class="form-label" for="modalEditUserFirstName">Tên</label>
                                             <input type="text" id="modalEditUserFirstName full_name" name="name"
-                                                class="form-control" placeholder="Combo " />
+                                                class="form-control" placeholder="Tên " />
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <label class="form-label" for="date-now">Ngày Tạo</label>
+                                            <input type="text" data-type="currency"
+                                                id="date-now" name="date" class="form-control flatpickr-basic"
+                                                placeholder="YYYY-MM-DD" />
+                                        </div>
+                                        <div class="col-12 col-md-12">
+                                            <label class="form-label" for="modalEditUserCountry">Mô tả</label>
+                                            <textarea class="form-control" name="description"
+                                                placeholder="Mô tả!" id="description" cols="30"
+                                                rows="2"></textarea>
                                         </div>
                                         <div class="col-12 text-center mt-2 pt-50">
-                                            <button type="submit" class="btn btn-primary me-1">Submit</button>
+                                            <button type="submit" class="btn btn-primary me-1">Lưu</button>
                                             <button type="reset" class="btn btn-outline-secondary"
                                                 data-bs-dismiss="modal" aria-label="Close">
-                                                Discard
+                                                Quay lại
                                             </button>
                                         </div>
                                     </form>
@@ -92,7 +105,7 @@
                     <h1 class="mb-1">Sửa mới danh mục thư viện</h1>
                     <p>Sửa mới danh mục thư viện của bạn !</p>
                 </div>
-                <form id="editForm" action="{{ route('cate.gallery.update.api') }}" method="POST"
+                <form id="editForm" method="POST"
                     class="row gy-1 pt-75 add-new-user" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="id" hidden>
@@ -113,10 +126,22 @@
                         </div>
                         <!--/ upload and reset button -->
                     </div>
-                    <div class="col-12 col-md-12">
+                    <div class="col-12 col-md-6">
                         <label class="form-label" for="modalEditUserFirstName">Tên Danh mục</label>
                         <input type="text" id="modalEditUserFirstName full_name" name="name"
                             class="form-control" placeholder="tên danh mục " />
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label" for="modalEditUserFirstName">Ngày Tạo</label>
+                        <input type="text" data-type="currency"
+                            id="modalEditUserFirstName full_name" name="date" class="form-control flatpickr-basic"
+                            placeholder="YYYY-MM-DD" />
+                    </div>
+                    <div class="col-12 col-md-12">
+                        <label class="form-label" for="modalEditUserCountry">Mô Tả</label>
+                        <textarea class="form-control" name="description"
+                            placeholder="Mô tả!" id="description" cols="30"
+                            rows="2"></textarea>
                     </div>
                    
                     <div class="col-12 text-center mt-2 pt-50">
@@ -139,6 +164,16 @@
     // liệt kê cate cho thẻ select category service
     
     $(function() {
+        $.ajax({
+            type: "GET",
+            url: "{{ route('cate.gallery.list.api') }}",
+            dataType: false,
+            success: function (response) {
+                console.log(response);
+            }
+        });
+        var now = moment().format('YYYY-MM-DD');
+        $('#date-now').val(now);
         var e = $("#DataTables_Table_User");
         var t = $(".modal fade show"),
             a = $(".add-new-user"),
@@ -153,20 +188,29 @@
             },
             columns: [
                 {
+                    data: null
+                },
+                {
                     data: "name"
                 },
                 {
                     data: "image"
                 },
+                {
+                    data: "gallery.length",
+                    "width": "20%",
+
+                },
 
             ],
             columnDefs: [
                 {
-                    "width": "25%",
-                    "targets": 1
-                },
+                    "searchable": false,
+                    "orderable": false,
+                    "targets": 0
+                },  
                 {
-                    targets: 0,
+                    targets: 1,
                     responsivePriority: 2,
                     render: function(e, t, a, s) {
                         var n = a.name;
@@ -176,7 +220,7 @@
                     },
                 },
                 {
-                    targets: 1,
+                    targets: 2,
                     render: function(e, t, a, s) {
                         var n = a.image;
                         if (n) {
@@ -185,11 +229,19 @@
                     },
                 },
                 {
-                    targets: 2,
+                    targets: 4,
                     title: "Hành động",
                     orderable: !1,
                     render: function(e, t, a, s) {
+                        var url = '{{ route("admin.gallery.list", [":id" ]) }}';
+                            url = url.replace(':id',  a.id);
                         return (
+                        '<a href="'+url+'" class="btn btn-sm btn-icon " >' +
+                        feather.icons['image'].toSvg({ class: 'font-medium-2 text-body' }) +
+                        '</i> </a>' +
+                        '<button class="btn btn-sm btn-icon" data-bs-toggle="modal" data-bs-target="#detailFormModal" id="detailFormBtn" data-id="'+a.id+'">' +
+                        feather.icons['eye'].toSvg({ class: 'font-medium-2 text-body' }) +
+                        '</i></button>' +
                         '<button class="btn btn-sm btn-icon" data-bs-toggle="modal" data-bs-target="#editFormModal" id="editFormBtn" data-id="'+a.id+'">' +
                         feather.icons['edit'].toSvg({ class: 'font-medium-2 text-body' }) +
                         '</i></button>' +
@@ -210,76 +262,9 @@
                 search: "Search",
                 searchPlaceholder: "Search..",
             },
-            buttons: [{
-                    extend: "collection",
-                    className: "btn btn-outline-secondary dropdown-toggle me-2",
-                    text: feather.icons["external-link"].toSvg({
-                        class: "font-small-4 me-50",
-                    }) + "Export",
-                    buttons: [{
-                            extend: "print",
-                            text: feather.icons.printer.toSvg({
-                                class: "font-small-4 me-50",
-                            }) + "Print",
-                            className: "dropdown-item",
-                            exportOptions: {
-                                columns: [0, 1,  3, 4]
-                            },
-                        },
-                        {
-                            extend: "csv",
-                            text: feather.icons["file-text"].toSvg({
-                                class: "font-small-4 me-50",
-                            }) + "Csv",
-                            className: "dropdown-item",
-                            exportOptions: {
-                                columns: [0, 1, 3, 4]
-                            },
-                        },
-                        {
-                            extend: "excel",
-                            text: feather.icons.file.toSvg({
-                                class: "font-small-4 me-50",
-                            }) + "Excel",
-                            className: "dropdown-item",
-                            exportOptions: {
-                                columns: [0, 1, 3, 4]
-                            },
-                        },
-                        {
-                            extend: "pdf",
-                            text: feather.icons.clipboard.toSvg({
-                                class: "font-small-4 me-50",
-                            }) + "Pdf",
-                            className: "dropdown-item",
-                            exportOptions: {
-                                columns: [0, 1, 3, 4]
-                            },
-                        },
-                        {
-                            extend: "copy",
-                            text: feather.icons.copy.toSvg({
-                                class: "font-small-4 me-50",
-                            }) + "Copy",
-                            className: "dropdown-item",
-                            exportOptions: {
-                                columns: [0, 1, 3, 4]
-                            },
-                        },
-                    ],
-                    init: function(e, t, a) {
-                        $(t).removeClass("btn-secondary"),
-                            $(t).parent().removeClass("btn-group"),
-                            setTimeout(function() {
-                                $(t)
-                                    .closest(".dt-buttons")
-                                    .removeClass("btn-group")
-                                    .addClass("d-inline-flex mt-50");
-                            }, 50);
-                    },
-                },
+            buttons: [
                 {
-                    text: "Thêm mới Danh mục ảnh",
+                    text: "Thêm mới",
                     className: "add-new btn btn-primary",
                     attr: {
                         "data-bs-toggle": "modal",
@@ -338,6 +323,7 @@
                     processData: false,
                     dataType: 'json',
                     contentType: false,
+                    async: false,
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -358,7 +344,13 @@
                     }
                 })                    
                 }
-            }))
+            }));
+    table.on( 'order.dt search.dt', function () {
+            table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    }).draw();
+
         $('body').on('click', '#deleteUser', function() {
             var id = $(this).data("id");
             Swal.fire({
@@ -398,7 +390,6 @@
             $('#editForm')[0].reset();
             var id = $(this).data("id");
             $.get('<?= route("cate.gallery.list.api") ?>' + "/show/" + id, function(data) {
-                console.log(data);
             var accountUploadImg = $("#account-upload-img"),
                 accountUpload = $("#account-upload"),
                 uploadedAvatar = $(".uploadedAvatar"),
@@ -421,6 +412,9 @@
                 accountUploadImg.attr("src", (  data.image ? "/storage/"+ data.image : "{{ asset('admin/images/img-default.png') }}") );
                 form.find('input[name="id"]').val(data.id);
                 form.find('input[name="name"]').val(data.name);
+                form.find('#description').val(data.description);
+                form.find('input[name="date"]').val(data.date);
+
                  }, 'json')
 
         });
@@ -430,11 +424,12 @@
             var form = this;
             $.ajax({
                 type: "POST",
-                url: $(form).attr('action'),
+                url: "{{ route('cate.gallery.update.api') }}",
                 data: new FormData(form),
                 processData: false,
                 dataType: 'json',
                 contentType: false,
+                async: false,
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },

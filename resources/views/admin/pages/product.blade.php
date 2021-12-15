@@ -21,6 +21,7 @@
                         <table class="user-list-table table" id="DataTables_Table_User">
                             <thead class="table-light">
                                 <tr>
+                                    <th>No.</th>
                                     <th>Tên sản phẩm</th>
                                     <th>Giá </th>
                                     <th>Ảnh </th>
@@ -81,7 +82,7 @@
 
 
                                         <div class="col-12 text-center mt-2 pt-50">
-                                            <button type="submit" class="btn btn-primary me-1">Submit</button>
+                                            <button type="submit" class="btn btn-primary me-1" id="btn-save" >Submit</button>
                                             <button type="reset" class="btn btn-outline-secondary"
                                                 data-bs-dismiss="modal" aria-label="Close">
                                                 Discard
@@ -185,7 +186,7 @@
                     <h1 class="mb-1">Sửa mới Sản phẩm</h1>
                     <p>Sửa mới sản phẩm của bạn !</p>
                 </div>
-                <form id="editForm" action="{{ route('product.update.api') }}" method="POST"
+                <form id="editForm"  method="POST"
                     class="row gy-1 pt-75 add-new-user" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="id" hidden>
@@ -264,6 +265,9 @@
             },
             columns: [
                 {
+                    data: null
+                },
+                {
                     data: "name"
                 },
                 {
@@ -281,11 +285,12 @@
             ],
             columnDefs: [
                 {
-                    "width": "25%",
-                    "targets": 4
+                    "searchable": false,
+                    "orderable": false,
+                    "targets": 0
                 },
                 {
-                    targets: 0,
+                    targets: 1,
                     responsivePriority: 2,
                     render: function(e, t, a, s) {
                         var n = a.name;
@@ -295,7 +300,7 @@
                     },
                 },
                 {
-                    targets: 1,
+                    targets: 2,
                     responsivePriority: 2,
                     render: function(e, t, a, s) {
                         var n = a.price;
@@ -305,7 +310,7 @@
                     },
                 },
                 {
-                    targets: 2,
+                    targets: 3,
                     render: function(e, t, a, s) {
                         var n = a.image;
                         if (n) {
@@ -314,7 +319,7 @@
                     },
                 },
                 {
-                    targets: 3,
+                    targets: 4,
                     render: function(e, t, a, s) {
                         var n = (a.cate ? a.cate.name : '');
                             return (`<span class="badge rounded-pill ${ a.cate ? ' badge-light-warning ' : '' }" text-capitalized>${n}</span>`)
@@ -322,7 +327,7 @@
                     },
                 },
                 {
-                    targets: 5,
+                    targets: 6,
                     title: "Hành động",
                     orderable: !1,
                     render: function(e, t, a, s) {
@@ -474,37 +479,41 @@
                     },
                 },
             }),
-            a.on("submit", function(e) {
+            a.on("submit", function(e) { 
                 e.preventDefault();
                 var s = a.valid();
                 var form = this;
-                if (s) {
-                $.ajax({
-                    type: "POST",
-                    url: $(form).attr('action'),
-                    data: new FormData(form),
-                    processData: false,
-                    dataType: 'json',
-                    contentType: false,
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(data) {
-                        if (data.code == 0) {
-                            $.each(data.error, function(prefix, val) {
-                                $(form).find('span' + prefix + '_error').text(val[0]);
-                            });
-                        } else {
-                            $(form)[0].reset();
-                            $('#modals-slide-in').modal("hide");
-                            table.ajax.reload();
-                            toastr.success(data.msg)
+                if (s) 
+                {
+                    $.ajax({
+                        type: "POST",
+                        url: $(form).attr('action'),
+                        data: new FormData(form),
+                        processData: false,
+                        async: false,
+                        dataType: 'json',
+                        contentType: false,
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(data) {
+                            if (data.code == 0) {
+                                $.each(data.error, function(prefix, val) {
+                                    $(form).find('span' + prefix + '_error').text(val[0]);
+                                });
+                            } else {
+                                $(form)[0].reset();
+                                $('#modals-slide-in').modal("hide");
+                                table.ajax.reload();
+                                toastr.success(data.msg);
+                            
+                            }
+                        
+                        },
+                        error: function(error) {
+                            console.log("Thêm không thành công", error);
                         }
-                    },
-                    error: function(error) {
-                        console.log("Thêm không thành công", error);
-                    }
-                })                    
+                    })                    
                 }
             }))
         $.ajax({
@@ -551,6 +560,11 @@
                     } 
                 });
         });
+        table.on( 'order.dt search.dt', function () {
+            table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    } ).draw();
  
         //detail
         $('body').on('click', '#detailUser', function() {
@@ -621,11 +635,12 @@
             var form = this;
             $.ajax({
                 type: "POST",
-                url: $(form).attr('action'),
+                url: "{{ route('product.update.api') }}",
                 data: new FormData(form),
                 processData: false,
                 dataType: 'json',
                 contentType: false,
+                async: false,
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -635,13 +650,15 @@
                     } else if (data.code == 1){
                         $(form)[0].reset();
                         $('#editFormModal').modal("hide");
+                        toastr.success(data.msg);
                         table.ajax.reload();
                     }
                 },
                 error: function(error) {
                     console.log("Sửa mới không thành công", error);
                 }
-            })
+            });
+
         });
 
     });

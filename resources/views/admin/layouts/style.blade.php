@@ -41,5 +41,13 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/plugins/forms/pickers/form-flat-pickr.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/plugins/forms/pickers/form-pickadate.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/vendors/css/pickers/flatpickr/flatpickr.min.css') }}">
-
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/pages/app-ecommerce.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/css/pages/ui-feather.min.csss') }}">
+
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/vendors/css/editors/quill/katex.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/vendors/css/editors/quill/monokai-sublime.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/vendors/css/editors/quill/quill.snow.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/vendors/css/editors/quill/quill.bubble.css') }}">
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Inconsolata&amp;family=Roboto+Slab&amp;family=Slabo+27px&amp;family=Sofia&amp;family=Ubuntu+Mono&amp;display=swap">
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/css/plugins/forms/form-quill-editor.min.css') }}">

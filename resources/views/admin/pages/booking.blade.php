@@ -19,15 +19,14 @@
           <table class="datatables-permissions table">
             <thead class="table-light">
               <tr>
-                <th></th>
-                <th></th>
+                <th>No.</th>
                 <th>Họ và tên</th>
                 <th>Email</th>
                 <th>Số điện thoại</th>
                 <th>Thời gian</th>
                 <th>Số lượng người</th>
                 <th>Trạng thái</th>
-                <th></th>
+                <th>Hành động</th>
 
 
               </tr>
@@ -166,56 +165,44 @@
               },  
       columns: [
         // columns according to JSON
-        { data: '' },
-        { data: 'id' },
+        
+        { data: null },
         { data: 'full_name' },
         { data: 'email' },
         { data: 'phone' },
         { data: 'date' },
         { data: 'persons' },
         { data: 'status' },
-
-        { data: '' }
       ],
       columnDefs: [
         {
-          // For Responsive
-          className: 'control',
-          orderable: false,
-          // responsivePriority: 2,
-          targets: 0,
-          render: function (data, type, full, meta) {
-            return '';
-          }
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
         },
         {
           targets: 1,
           visible: false
         },
         {
-          // remove ordering from Name
-          targets: 2,
-          // orderable: false
+            targets: 6,
+            render: function(e, t, a, s) {
+                var n = a.status;
+                if (n == 1 || !n) {
+                    return ('<span class="badge rounded-pill badge-light-warning" text-capitalized>Chờ xác nhận</span>')
+                }
+                else  if (n == 2) {
+                    return ('<span class="badge rounded-pill badge-light-primary" text-capitalized>Xác nhận thành công</span>')
+                }
+                else if (n == 3) {
+                    return ('<span class="badge rounded-pill badge-light-success" text-capitalized>Thành công</span>')
+                }
+                
+            },
         },
         {
-                    targets: 7,
-                    render: function(e, t, a, s) {
-                        var n = a.status;
-                        if (n == 1) {
-                            return ('<span class="badge rounded-pill badge-light-warning" text-capitalized>Chờ xác nhận</span>')
-                        }
-                        else  if (n == 2) {
-                            return ('<span class="badge rounded-pill badge-light-primary" text-capitalized>Xác nhận thành công</span>')
-                        }
-                        else if (n == 3) {
-                            return ('<span class="badge rounded-pill badge-light-success" text-capitalized>Thành công</span>')
-                        }
-                       
-                    },
-                },
-        {
           // Actions
-          targets: -1,
+          targets: 7,
           title: 'Hành động',
           orderable: false,
           render: function (data, type, full, meta) {
@@ -260,7 +247,7 @@
                   }) + "Print",
                   className: "dropdown-item",
                   exportOptions: {
-                      columns: [0, 1, 2, 3, 4]
+                      columns: [ 1, 2, 3, 4, 5, 6 ]
                   },
               },
               {
@@ -270,7 +257,7 @@
                   }) + "Csv",
                   className: "dropdown-item",
                   exportOptions: {
-                      columns: [0, 1, 2, 3, 4]
+                      columns: [1, 2, 3, 4, 5, 6 ]
                   },
               },
               {
@@ -280,7 +267,7 @@
                   }) + "Excel",
                   className: "dropdown-item",
                   exportOptions: {
-                      columns: [0, 1, 2, 3, 4]
+                      columns: [ 1, 2, 3, 4, 5, 6 ]
                   },
               },
               {
@@ -290,7 +277,7 @@
                   }) + "Pdf",
                   className: "dropdown-item",
                   exportOptions: {
-                      columns: [0, 1, 2, 3, 4]
+                      columns: [ 1, 2, 3, 4, 5, 6 ]
                   },
               },
               {
@@ -300,7 +287,7 @@
                   }) + "Copy",
                   className: "dropdown-item",
                   exportOptions: {
-                      columns: [0, 1, 2, 3, 4]
+                      columns: [ 1, 2, 3, 4, 5, 6]
                   },
               },
           ],
@@ -336,6 +323,11 @@ var  a = $("#addBookingForm");
 //           return !response;
 //       },"Vai trò đã tồn tại!");
 
+table.on( 'order.dt search.dt', function () {
+            table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    }).draw();
 a.length && (a.validate({
           errorClass: "error",
           rules: {
@@ -353,6 +345,7 @@ a.length && (a.validate({
               data: new FormData(form),
               processData: false,
               dataType:'json',
+              async: false,
               contentType: false,
               headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -444,6 +437,7 @@ a.length && (a.validate({
                 processData: false,
                 dataType: 'json',
                 contentType: false,
+                async: false,
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },

@@ -12,13 +12,10 @@
                     <div class="col-12">
                         <h2 class="content-header-title float-start mb-0">Thư viện ảnh</h2>
                         <div class="breadcrumb-wrapper">
-                            {{-- <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index-2.html">Home</a>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{{ route('admin.cate.gallery.list') }}">Quay lại</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#">eCommerce</a>
-                                </li>
-
-                            </ol> --}}
+                            </ol>
                         </div>
                     </div>
                 </div>
@@ -36,28 +33,22 @@
         <div class="content-body">
             <!-- Wishlist Starts -->
             <section id="wishlist" class="grid-view wishlist-items gallery-list">
-
-                
-{{-- 
-                <div class="card ecommerce-card">
-                    <div class="item-img text-center">
-                        <a href="app-ecommerce-details.html">
-                            <img src="{{ asset('admin/images/pages/eCommerce/9.png')}}" class="img-fluid"
-                                alt="img-placeholder" />
+                @foreach ($gallery as $image)
+                <div class="card ecommerce-card gallery-list-children" id="gallery-{{ $image->id }}">
+                    <div class="item-img text-center " style="padding:10px;" >
+                        <a href="#">
+                            <img src="{{ asset('/storage/'. $image->url)}}" class="img-fluid  mx-auto"
+                                alt="img-placeholder" style="height:230px; width:100vw;" />
                         </a>
                     </div>
-
-                    <div class="item-options text-center">
-                        <button type="button" class="btn btn-light btn-wishlist remove-wishlist">
-                            <i data-feather="x"></i>
-                            <span>Remove</span>
-                        </button>
-                        <button type="button" class="btn btn-primary btn-cart move-cart">
-                            <i data-feather="shopping-cart"></i>
-                            <span class="add-to-cart">Move to cart</span>
+                    <div class="item-options text-center ">
+                        <button type="button" class="btn btn-danger btn-wishlist remove-wishlist" data-id="{{$image->id}}" id="delete">
+                            <i data-feather='trash-2'></i>
+                            <span>Xóa ảnh</span>
                         </button>
                     </div>
-                </div> --}}
+                </div>
+                @endforeach
             </section>
             <!-- Wishlist Ends -->
 
@@ -81,10 +72,12 @@
                     @csrf
                     <input type="text" name="id" hidden>
                     <div class="col-12 col-md-12">
-                        <label class="form-label" for="modalEditUserFirstName">Ảnh Combo</label>
+                        <label class="form-label" for="modalEditUserFirstName">Ảnh </label>
                         <input type="file" id="modalEditUserFirstName full_name" name="url" class="form-control"
                             accept="image/*" />
                     </div>
+                    <input type="text"  hidden name="cate_gallery_id" id="" value="{{ $gl_id->id }}"/>
+
                     <div class="col-12 text-center mt-2 pt-50">
                         <button type="submit" class="btn btn-primary me-1">Submit</button>
                         <button type="reset" class="btn btn-outline-secondary" data-bs-dismiss="modal"
@@ -100,33 +93,8 @@
 
 @endsection
 @section('script')
+
 <script>
-    $(function () {
-  "use strict";
-    $.get("{{ route('gallery.list.api') }}",function (data) {
-            data.map(function (image){
-                $('.gallery-list').append(
-                `<div class="card ecommerce-card" id="gallery-${image.id}">
-                    <div class="item-img text-center " style="padding:10px;" >
-                        <a href="app-ecommerce-details.html">
-                            <img src="{{ asset('/storage/${image.url}')}}" class="img-fluid  mx-auto"
-                                alt="img-placeholder" style="height:230px; width:100vw;" />
-                        </a>
-                    </div>
-                    <div class="item-options text-center ">
-                        <button type="button" class="btn btn-danger btn-wishlist remove-wishlist" data-id="${image.id}" id="delete">
-                            <i data-feather='trash-2'></i>
-                            <span>Xóa ảnh</span>
-                        </button>
-                        <button type="button" class="btn btn-primary btn-cart move-cart" >
-                            <i data-feather="shopping-cart"></i>
-                            <span class="add-to-cart">Move to cart</span>
-                        </button>
-                    </div>
-                </div>`);
-            });
-        });
-});
 var a = $('#addForm');
 a.on("submit", function(e) {
     e.preventDefault();
@@ -140,6 +108,7 @@ a.on("submit", function(e) {
         processData: false,
         dataType: 'json',
         contentType: false,
+        async: false,
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
@@ -149,8 +118,22 @@ a.on("submit", function(e) {
             } else {
                 $(form)[0].reset();
                 $('#modals-slide-in').modal("hide");
-                window.location.reload();
-                // toastr.success(data.msg);
+                        $('.gallery-list').append(
+                        `<div class="card ecommerce-card gallery-list-children" id="gallery-${data.id}">
+                            <div class="item-img text-center " style="padding:10px;" >
+                                <a href="app-ecommerce-details.html">
+                                    <img src="{{ asset('/storage/${data.url}')}}" class="img-fluid  mx-auto"
+                                        alt="img-placeholder" style="height:230px; width:100vw;" />
+                                </a>
+                            </div>
+                            <div class="item-options text-center ">
+                                <button type="button" class="btn btn-danger btn-wishlist remove-wishlist" data-id="${data.id}" id="delete">
+                                    <i data-feather='trash-2'></i>
+                                    <span>Xóa ảnh</span>
+                                </button>
+                            </div>
+                        </div>`);
+                toastr.success('Thêm mới ảnh thành Công !');
             }
         },
         error: function(error) {

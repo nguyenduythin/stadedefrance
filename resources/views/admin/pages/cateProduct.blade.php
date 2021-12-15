@@ -73,7 +73,7 @@
                                 <h1 class="mb-1">Cập nhật mới đặt lịch</h1>
                                 <p>Cập nhập chi tiết đặt lịch mới !</p>
                             </div>
-                            <form id="editForm" action="{{ route('cate.product.update.api') }}" method="POST"
+                            <form id="editForm"  method="POST"
                                 class="row gy-1 pt-75" >
                                 @csrf
                                 <input type="text" name="id" hidden>
@@ -211,6 +211,7 @@ a.length && (a.validate({
               processData: false,
               dataType:'json',
               contentType: false,
+              async: false,
               headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -285,11 +286,12 @@ a.length && (a.validate({
             var form = this;
             $.ajax({
                 type: "POST",
-                url: $(form).attr('action'),
+                url: "{{ route('cate.product.update.api') }}",
                 data: new FormData(form),
                 processData: false,
                 dataType: 'json',
                 contentType: false,
+                async: false,
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },

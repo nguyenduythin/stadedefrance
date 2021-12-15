@@ -19,14 +19,18 @@
 <script src="{{ asset('admin/vendors/js/forms/validation/jquery.validate.min.js')}}"></script>
 <script src="{{ asset('admin/vendors/js/forms/cleave/cleave.min.js')}}"></script>
 <script src="{{ asset('admin/vendors/js/forms/cleave/addons/cleave-phone.us.js')}}"></script>
-<script src="{{ asset('admin/vendors/js/pickers/flatpickr/flatpickr.min.js')}}"></script>
 <script src="{{ asset('admin/vendors/js/pickers/pickadate/picker.js')}}"></script>
 <script src="{{ asset('admin/vendors/js/pickers/pickadate/picker.date.js')}}"></script>
 <script src="{{ asset('admin/vendors/js/pickers/pickadate/picker.time.js')}}"></script>
 <script src="{{ asset('admin/vendors/js/pickers/pickadate/legacy.js')}}"></script>
 <script src="{{ asset('admin/vendors/js/pickers/flatpickr/flatpickr.min.js')}}"></script>
 <script src="{{ asset('admin/vendors/js/extensions/sweetalert2.all.min.js')}}"></script>
-
+{{-- quil --}}
+<script src="{{ asset('admin/vendors/js/editors/quill/katex.min.js')}}"></script>
+<script src="{{ asset('admin/vendors/js/editors/quill/highlight.min.js')}}"></script>
+<script src="{{ asset('admin/vendors/js/editors/quill/quill.min.js')}}"></script>
+{{-- quil --}}
+<script src="{{ asset('admin/vendors/js/ckeditor/ckeditor5-build-classic/ckeditor.js')}}"></script>
 
 {{-- roles page --}}
 <script src="{{ asset('admin/vendors/js/tables/datatable/datatables.checkboxes.min.js')}}"></script>

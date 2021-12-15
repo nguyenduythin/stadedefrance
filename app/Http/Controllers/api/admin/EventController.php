@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\api\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
+use App\Models\GalleryEvent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -14,7 +17,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $model = Event::all();
+        return response()->json($model);
     }
 
     /**
@@ -25,7 +29,17 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new Event();
+        $model->fill($request->all());
+        if ($request->hasFile('image')) {
+            $model->image = $request->file('image')->storeAs('/images/event', uniqid() . '-' . $request->image->getClientOriginalName());
+        }
+        $query =  $model->save();
+        if (!$query) {
+            return response()->json(['code' => 0, 'msg' => 'Thêm mới không thành công !']);
+        } else {
+            return response()->json(['code' => 1, 'msg' => 'Thêm mới thành công !']);
+        }
     }
 
     /**
@@ -36,7 +50,8 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        //
+        $model = Event::find($id);
+        return response()->json($model);
     }
 
     /**
@@ -46,9 +61,24 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $model = Event::find($request->id);
+        if ($request->hasFile('image')) {
+            Storage::delete($model->image);
+        }
+        $model->fill($request->all());
+        if ($request->hasFile('image')) {
+            
+            $model->image = $request->file('image')->storeAs('/images/event', uniqid() . '-' . $request->image->getClientOriginalName());
+        }
+
+        $query =  $model->save();
+        if (!$query) {
+            return response()->json(['code' => 0, 'msg' => 'Sửa mới không thành công !']);
+        } else {
+            return response()->json(['code' => 1, 'msg' => 'Sửa mới thành công !']);
+        }
     }
 
     /**
@@ -59,6 +89,17 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $products = Event::find($id);
+
+        Storage::delete($products->image);
+        $model = GalleryEvent::where('event_id', $id)->get();
+        foreach ($model as $value) {
+            $onlyG = GalleryEvent::find($value->id);
+            Storage::delete($value->url);
+            $onlyG->delete();
+        }
+        Storage::delete($products->image);
+        $products->delete();
+        return  response()->json(['success' => 'Xóa thành công!']);
     }
 }

@@ -3,18 +3,21 @@
 namespace App\Http\Controllers\api\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\GalleryNews;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryNewController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $gallery = GalleryNews::where('event_id',$id)->get();
+        return  response()->json($gallery);
     }
 
     /**
@@ -25,7 +28,19 @@ class GalleryNewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new GalleryNews();
+        $model->fill($request->all());
+        if ($request->hasFile('url')) {
+            $model->url = $request->file('url')->storeAs('/images/gallery-new', uniqid() . '-' . $request->url->getClientOriginalName());
+        }
+        $query =  $model->save();
+        $galleryFirsy = GalleryNews::orderBy('created_at', 'desc')->first();
+
+        if (!$query) {
+            return response()->json(['code' => 0, 'msg' => 'Thêm mới không thành công !']);
+        } else {
+            return response()->json($galleryFirsy);
+        }
     }
 
     /**
@@ -59,6 +74,9 @@ class GalleryNewController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = GalleryNews::find($id);
+        Storage::delete($model->url);
+        $model->delete();
+        return  response()->json(['success' => 'Xóa thành công!']);
     }
 }

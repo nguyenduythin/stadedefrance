@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\api\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SliderController extends Controller
 {
@@ -14,7 +16,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+        $model = Slider::all();
+        return response()->json($model);
     }
 
     /**
@@ -25,7 +28,18 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new Slider();
+        
+        $model->fill($request->all());
+        if ($request->hasFile('image')) {
+            $model->image = $request->file('image')->storeAs('/images/slider', uniqid() . '-' . $request->image->getClientOriginalName());
+        }
+        $query =  $model->save();
+        if (!$query) {
+            return response()->json(['code' => 0, 'msg' => 'Thêm mới không thành công !']);
+        } else {
+            return response()->json(['code' => 1, 'msg' => 'Thêm mới thành công !']);
+        }
     }
 
     /**
@@ -36,7 +50,8 @@ class SliderController extends Controller
      */
     public function show($id)
     {
-        //
+        $model = Slider::find($id);
+        return response()->json($model);
     }
 
     /**
@@ -46,9 +61,24 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $model = Slider::find($request->id);
+        if ($request->hasFile('image')) {
+            Storage::delete($model->image);
+        }
+        $model->fill($request->all());
+      
+        if ($request->hasFile('image')) {
+            $model->image = $request->file('image')->storeAs('/images/slider', uniqid() . '-' . $request->image->getClientOriginalName());
+        }
+
+        $query =  $model->save();
+        if (!$query) {
+            return response()->json(['code' => 0, 'msg' => 'Sửa mới không thành công !']);
+        } else {
+            return response()->json(['code' => 1, 'msg' => 'Sửa mới thành công !']);
+        }
     }
 
     /**
@@ -59,6 +89,9 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Slider::find($id);
+        Storage::delete($model->image);
+        $model->delete();
+        return  response()->json(['success' => 'Xóa thành công!']);
     }
 }
