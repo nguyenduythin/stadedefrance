@@ -78,14 +78,9 @@
                         </div>
                         <!-- post end-->
                         <!-- post-author-->                                   
-                        <div class="post-author fl-wrap">
-                            <div class="author-img">
-                                <img alt='' src="{{ asset('client/images/avatar/2.jpg')}}">	
-                            </div>
+                        {{-- <div class="post-author fl-wrap">
                             <div class="author-content">
-                                <h5><a href="#">Jane Kowalski</a></h5>
-                                <p>At one extremity the rope was unstranded, and the separate spread yarns were all braided and woven round the socket of the harpoon; the pole was then driven hard up into the socket; from the lower end the rope was traced half-way along the poles length, and firmly secured so, with intertwistings of twine.</p>
-                                <div class="author-social">
+                               <div class="author-social">
                                     <ul>
                                         <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
@@ -94,8 +89,19 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!--post-author end-->
+                        <div class="main-sidebar-widget fl-wrap">
+                            <div class="social-widget">
+                                <ul>
+                                    <li><a href="#" target="_blank" ><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#" target="_blank" ><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#" target="_blank" ><i class="fab fa-pinterest"></i></a></li>
+                                    <li><a href="#" target="_blank" ><i class="fab fa-tumblr"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                         <!--post-related-->
                         <div class="post-related fl-wrap">
                             <h6 class="comments-title">You Might Also Like</h6>
@@ -127,59 +133,14 @@
                         <!-- post-related  end-->                                      
                         <div   class="single-post-comm fl-wrap">
                             <!--title-->
-                            <h6 class="comments-title">Comments<span>( 2 )</span></h6>
-                            <ul class="commentlist clearafix">
-                                <li class="comment">
-                                    <div class="comment-body">
-                                        <div class="comment-author">
-                                            <img alt='' src='images/avatar/1.jpg' width="50" height="50">
-                                        </div>
-                                        <cite class="fn"><a href="#">Kevin</a></cite>
-                                        <div class="comment-meta">
-                                            <h6><a href="#">January 02, 2014 at 07:39 am</a> / <a class='comment-reply-link' href="#">Reply</a></h6>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.</p>
-                                    </div>
-                                </li>
-                                <li class="comment">
-                                    <!--comment body-->
-                                    <div class="comment-body">
-                                        <div class="comment-author">
-                                            <img alt='' src='images/avatar/2.jpg' width="50" height="50">
-                                        </div>
-                                        <cite class="fn"><a href="#">Andy</a></cite>
-                                        <div class="comment-meta">
-                                            <h6><a href="#">January 22, 2014 at 03:19 am</a> / <a class='comment-reply-link' href="#">Reply</a></h6>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.</p>
-                                    </div>
-                                </li>
-                            </ul>
+                          
                             <div class="clearfix"></div>
-                            <div id="respond" class="clearafix">
-                                <h6 class="comments-title">Leave A Review</h6>
-                                <form  class="custom-form fl-wrap">
-                                    <fieldset>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <input type="text" name="name"  placeholder="Your Name *" value=""/>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <input type="text"  name="email"  placeholder="Email Address *" value=""/>
-                                            </div>
-                                        </div>
-                                        <textarea name="comments"    cols="40" rows="3" placeholder="Your Message:"></textarea>
-                                        <div class="clearfix"></div>
-                                        <button class="btn float-btn  color-bg" id="submit_comm">Add Comment <i class="fal fa-long-arrow-right"></i></button>
-                                    </fieldset>
-                                </form>
-                            </div>
                             <!--end respond-->
                         </div>
                         <!--comments end -->                                        
                     </div>
                 </div>
-                <!--  sidebar  -->  
+                {{-- <!--  sidebar  -->  
                 <div class="col-md-4">
                     <!-- main-sidebar -->   
                     <div class="main-sidebar fixed-bar fl-wrap">
@@ -290,7 +251,7 @@
                     </div>
                     <!-- main-sidebar end-->                                        
                 </div>
-                <!--  sidebar end-->    
+                <!--  sidebar end-->     --}}
             </div>
             <div class="fl-wrap limit-box"></div>
         </div>

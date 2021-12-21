@@ -26,7 +26,7 @@
     <section class="hidden-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="fl-wrap post-container">
                         <!-- post -->
                         <div class="post fl-wrap fw-post">
@@ -191,9 +191,9 @@
                     </div>
                 </div>
                 <!--  sidebar  -->  
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <!-- main-sidebar -->   
-                    <div class="main-sidebar fixed-bar fl-wrap">
+                    {{-- <div class="main-sidebar fixed-bar fl-wrap">
                         <!-- main-sidebar-widget-->   
                         <div class="main-sidebar-widget fl-wrap">
                             <div class="search-widget fl-wrap">
@@ -298,7 +298,7 @@
                             </div>
                         </div>
                         <!-- main-sidebar-widget end--> 
-                    </div>
+                    </div> --}}
                     <!-- main-sidebar end-->                                        
                 </div>
                 <!--  sidebar end-->    

@@ -89,34 +89,34 @@
 @section('script')
 <script>
 
-    var a = $('#bookingForm');
-    a.validate({
-                errorClass: "error",
-                rules: {
-                    "full_name": {
-                        required: !0
-                    },
-                     "email": {
-                        required: !0
-                    },
-                    "phone": {
-                        required: !0
-                    },
-                    "date": {
-                        required: !0,
-                    },
-                    "persons": {
-                        required: !0,
-                    },
+var a = $('#bookingForm');
+a.validate({
+    errorClass: "error",
+    rules: {
+        "full_name": {
+            required: !0
+        },
+            "email": {
+            required: !0
+        },
+        "phone": {
+            required: !0
+        },
+        "date": {
+            required: !0,
+        },
+        "persons": {
+            required: !0,
+        },
 
-                    "time": {
-                        required: !0,
-                    },
-                    "message": {
-                        required: !0
-                    },
-                },
-            }),
+        "time": {
+            required: !0,
+        },
+        "message": {
+            required: !0
+        },
+    },
+}),
 a.on("submit", function(e) {
     e.preventDefault();
     var s = a.valid();

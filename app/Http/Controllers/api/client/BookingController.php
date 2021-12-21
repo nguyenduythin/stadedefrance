@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\api\client;
 
 use App\Http\Controllers\Controller;
+use App\Mail\BookingMail;
+use App\Models\AdminAuth;
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
@@ -31,6 +35,9 @@ class BookingController extends Controller
         $booking->fill($request->all()); 
         $booking->fill(['date' => $request->date]);
         $booking->save();
+        $bookingNewAdd = DB::table('booking')->latest()->first();
+        $emailAdmin = AdminAuth::where('role',999)->first();
+        Mail::to($emailAdmin->email)->queue(new BookingMail($bookingNewAdd));
         if (!$booking) {
             return response()->json(['code' => 0, 'msg' => 'Thêm mới không thành công !']);
         } else {

@@ -4,7 +4,7 @@ function initRestabook() {
     //   loader ------------------
     firstLoad();
     function firstLoad() {
-        TweenMax.to($(".loader"), 1.5, {
+        TweenMax.to($(".loader"), 2, {
             force3D: false,
             scale: "0",
             ease: Expo.easeInOut,
@@ -378,6 +378,7 @@ function initRestabook() {
             effect: "slide",
             mousewheel: false,
             parallax: true,
+            lazy: true,
 
 
             init: false,
@@ -389,10 +390,10 @@ function initRestabook() {
                 nextEl: '.fs-slider-button-next',
                 prevEl: '.fs-slider-button-prev',
             },
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false
-            },
+            // autoplay: {
+            //     delay: 3500,
+            //     disableOnInteraction: false
+            // },
 
         });
         setTimeout(function () {
@@ -432,6 +433,7 @@ function initRestabook() {
             parallax: true,
             speed: 1400,
             effect: "slide",
+            lazy: true,
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false

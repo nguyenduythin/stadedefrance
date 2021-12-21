@@ -20,6 +20,7 @@
                     <table class="datatables-permissions table">
                         <thead class="table-light">
                             <tr>
+                                <th>No.</th>
                                 <th>Tên danh mục</th>
                                 <th>Hành động</th>
                             </tr>
@@ -114,12 +115,14 @@
               "dataSrc": ""
               },  
       columns: [
-      
+        {
+                    data: null
+         },
       ],
       columnDefs: [
 
         {
-            targets:0,
+            targets:1,
             class: "ml-20",
             render: function(e, t, a, s) {
                 var n = a.name;
@@ -129,7 +132,7 @@
         },
         {
           // Actions
-          targets: 1,
+          targets: 2,
           orderable: !1,
           render: function (data, type, full, meta) {
             return (
@@ -180,6 +183,11 @@
       },
       
     });
+    table.on( 'order.dt search.dt', function () {
+            table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    }).draw();
 var  a = $("#addForm");
 $.validator.addMethod(
         "uniqueName1", 

@@ -12,63 +12,46 @@
                         <!-- swiper-slide-->
                         <div class="swiper-slide">
                             <div class="fs-slider-item fl-wrap">
-                                <div class="bg" data-bg=" {{ asset('client/images/bg/20.jpg')}}"
-                                    data-swiper-parallax="40%"></div>
-                                <div class="overlay"></div>
-                                <div class="grid-carousel-title">
-                                    <h3>Welcome To Our Restaurant </h3>
-                                    <div class="clearfix"></div>
-                                    <h4>Quis autem vel eum iure reprehenderit qui in ea voluptate</h4>
-                                    <div class="bold-separator"><span></span></div>
-                                    <a href="#sec2" class="hero_btn custom-scroll-link">Scroll down to Discover<i
-                                            class="fal fa-long-arrow-down"></i></a>
-                                </div>
+                                <div class="bg "  data-bg=" {{ asset('client/images/bg/thinduy/DSC01183-min.jpg')}}"
+                                    data-swiper-parallax="40%"
+                                    ></div>
+                                <div class="overlay" style="opacity:0.3;"></div>
+                                    
+                                    {{-- <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div> --}}
                             </div>
                         </div>
                         <!-- swiper-slide-->
                         <!-- swiper-slide-->
                         <div class="swiper-slide">
                             <div class="fs-slider-item fl-wrap">
-                                <div class="bg" data-bg=" {{ asset('client/images/bg/18.jpg')}}"
-                                    data-swiper-parallax="40%"></div>
-                                <div class="overlay"></div>
-                                <div class="grid-carousel-title">
-                                    <h3>Explore Our Menu</h3>
-                                    <div class="clearfix"></div>
-                                    <h4>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-                                        laboriosam.</h4>
-                                    <div class="bold-separator"><span></span></div>
-                                    <a href="menu.html" class="hero_btn">Click to Discover<i
-                                            class="fal fa-long-arrow-right"></i></a>
-                                </div>
+                                <div class="bg " data-bg=" {{ asset('client/images/bg/thinduy/DSC01494-min.jpg')}}"
+                                    data-swiper-parallax="40%"
+                                    ></div>
+                                    <div class="overlay" style="opacity:0.3;"></div>
+                                    {{-- <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div> --}}
                             </div>
                         </div>
-                        <!-- swiper-slide-->
-                        <!-- swiper-slide-->
+
                         <div class="swiper-slide">
                             <div class="fs-slider-item fl-wrap">
-                                <div class="bg" data-bg="{{ asset('client/images/bg/1.jpg')}}"
-                                    data-swiper-parallax="40%"></div>
-                                <div class="overlay"></div>
-                                <div class="grid-carousel-title">
-                                    <h3>Our Awesome Story</h3>
-                                    <div class="clearfix"></div>
-                                    <h4>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-                                        laboriosam.</h4>
-                                    <div class="bold-separator"><span></span></div>
-                                    <a href="{{ route('event') }}" class="hero_btn">Click to Discover<i
-                                            class="fal fa-long-arrow-right"></i></a>
-                                </div>
+                                <div class="bg " data-bg="{{ asset('client/images/bg/thinduy/DSC01365-min.jpg')}}"
+                                    data-swiper-parallax="40%"
+                                    ></div>
+                                <div class="overlay" style="opacity:0.3;"></div>
+
+                             
                             </div>
                         </div>
-                        <!-- swiper-slide-->
-                        <!-- swiper-slide-->
-                        <div class="swiper-slide">
+
+                        {{-- <div class="swiper-slide">
                             <div class="fs-slider-item fl-wrap">
-                                <div class="bg" data-bg="{{ asset('client/images/bg/17.jpg')}}"
+                                <div class="bg " data-bg="{{ asset('client/images/bg/thinduy/DSC01518-min.jpg')}}"
                                     data-swiper-parallax="40%"></div>
-                                <div class="overlay"></div>
-                                <div class="grid-carousel-title">
+                              
+                            </div>
+                        </div>   --}}
+                         {{-- <div class="overlay"></div> --}}
+                                {{-- <div class="grid-carousel-title">
                                     <h3>Visit Our Online Store</h3>
                                     <div class="clearfix"></div>
                                     <h4>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
@@ -76,10 +59,8 @@
                                     <div class="bold-separator"><span></span></div>
                                     <a href="{{ route('menu') }}" class="hero_btn">Menu Online<i
                                             class="fal fa-long-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- swiper-slide-->
+                                </div> --}}
+
                     </div>
                 </div>
             </div>
@@ -124,14 +105,18 @@
                     <div class="col-md-6">
                         <div class="image-collge-wrap fl-wrap">
                             <div class="main-iamge">
-                                <img src=" {{ asset('client/images/all/3.jpg')}}" alt="">
-                            </div>
+                                {{-- <img src=" {{ asset('client/images/all/3.jpg')}}" alt="" style="background-color: black;"> --}}
+                                <video width="100%" class="video-style" height="130%" controls autoplay onloadstart="this.volume=0.5">
+                                <source src="{{ asset('storage/Stadedefrance.mp4')}}" type="video/mp4">
+                                </video>
+                            </div> 
+                          
                             <div class="images-collage-item" style="width:65%" data-position-left="68"
                                 data-position-top="-15" data-zindex="2" data-opacity="1.0"><img
                                     src=" {{ asset('client/images/all/8.jpg')}}" alt=""></div>
                             <div class="images-collage-item col_par" style="width:120px" data-position-left="-23"
                                 data-position-top="-17" data-zindex="9"
-                                data-scrollax="properties: { translateY: '150px' }"><img src="images/cube.png" alt="">
+                                data-scrollax="properties: { translateY: '150px' }"><img src="{{ asset('client/images/cube.png')}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -152,7 +137,7 @@
                     <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
                         laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
                         accusantium."</p>
-                    <div class="signature"><img src="images/signature.png" alt=""></div>
+                    <div class="signature"><img src="{{ asset('client/images/signature.png')}}" alt=""></div>
                     <h4>Kevin Kowalsky - Restaurant’s cheaf</h4>
                 </div>
             </div>
@@ -188,7 +173,7 @@
                     </div>
                 </div>
                 <div class="illustration_bg">
-                    <div class="bg" data-bg="images/bg/dec/7.png"></div>
+                    <div class="bg" data-bg="{{ asset('client/images/bg/dec/7.png')}}"></div>
                 </div>
             </div>
         </section>
@@ -295,10 +280,10 @@
                         class="fal fa-long-arrow-right"></i></a>
                 <div class="images-collage-item col_par" style="width:120px" data-position-left="83"
                     data-position-top="87" data-zindex="1" data-scrollax="properties: { translateY: '150px' }"><img
-                        src="images/cube.png" alt=""></div>
+                        src="{{ asset('client/images/cube.png')}}" alt=""></div>
             </div>
             <div class="section-bg">
-                <div class="bg" data-bg="images/bg/dec/section-bg.png"></div>
+                <div class="bg" data-bg="{{ asset('client/images/bg/dec/section-bg.png')}}"></div>
             </div>
         </section>
         <!--  section end  -->
@@ -324,7 +309,7 @@
                         <!--  hero-menu_header-->
                         <div class="col-md-3">
                             <div class="hero-menu_header fl-wrap">
-                                <ul class="tabs-menu     no-list-style change_bg">
+                                <ul class="tabs-menu no-list-style change_bg">
                                     <li class="current"><a href="#tab-1"
                                             data-bgtab="{{ asset('client/images/bg/4.jpg')}}"><span>01.</span>Main
                                             dishes</a></li>
@@ -614,6 +599,7 @@
             </div>
         </section>
         <!--  section  end-->
+        
         <section data-scrollax-parent="true">
             <div class="container">
                 <div class="section-title">
@@ -629,19 +615,11 @@
                                 <div class="team-photo">
                                     <img src="{{ asset('client/images/team/1.jpg')}}" alt="" class="respimg">
                                     <div class="overlay"></div>
-                                    <div class="team-social">
-                                        <span class="ts_title">Follow</span>
-                                        <ul class="no-list-style">
-                                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                        </ul>
-                                    </div>
+                                
                                 </div>
                                 <div class="team-info fl-wrap">
                                     <h3> Kevin Gray </h3>
-                                    <h4>Master chef in New York</h4>
+                                    <h4> <i class="far fa-calendar-alt"></i> 21/12/2021 10:00</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                         incididunt ut labore et dolore magna aliqua. </p>
                                 </div>
@@ -654,19 +632,11 @@
                                 <div class="team-photo">
                                     <img src="{{ asset('client/images/team/2.jpg')}}" alt="" class="respimg">
                                     <div class="overlay"></div>
-                                    <div class="team-social">
-                                        <span class="ts_title">Follow</span>
-                                        <ul class="no-list-style">
-                                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                        </ul>
-                                    </div>
+                                   
                                 </div>
                                 <div class="team-info fl-wrap">
                                     <h3> Austin Evon </h3>
-                                    <h4>Master chef in Florida</h4>
+                                    <h4> <i class="far fa-calendar-alt"></i> 21/12/2021 10:00</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                         incididunt ut labore et dolore magna aliqua. </p>
                                 </div>
@@ -679,19 +649,11 @@
                                 <div class="team-photo">
                                     <img src=" {{ asset('client/images/team/3.jpg')}}" alt="" class="respimg">
                                     <div class="overlay"></div>
-                                    <div class="team-social">
-                                        <span class="ts_title">Follow</span>
-                                        <ul class="no-list-style">
-                                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                        </ul>
-                                    </div>
+                                  
                                 </div>
                                 <div class="team-info fl-wrap">
                                     <h3> Taylor Roberts </h3>
-                                    <h4>Master chef in Maiami</h4>
+                                    <h4> <i class="far fa-calendar-alt"></i> 21/12/2021 10:00</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                         incididunt ut labore et dolore magna aliqua. </p>
                                 </div>
@@ -780,9 +742,10 @@
                     </div>
                 </div>
                 <div class="illustration_bg">
-                    <div class="bg" data-bg="images/bg/dec/6.png"></div>
+                    <div class="bg" data-bg="{{ asset('client/images/bg/dec/6.png') }}" ></div>
                 </div>
             </div>
+            <div class="wave-bg wave-bg_right " data-scrollax="properties: { translateY: '-150px' }"></div>
         </section>
         <!-- section end  -->
         <!-- section   -->
@@ -793,85 +756,59 @@
                     <h4>What said about us</h4>
                     <h2>Customer Reviews</h2>
                     <div class="dots-separator fl-wrap"><span></span></div>
+                        <!-- inline-facts -->
+                        <div class="inline-facts-wrap">
+                            <div class="inline-facts">
+                                <div class="milestone-counter">
+                                    <div class="stats animaper">
+                                        <div class="num" data-content="0" data-num="254">154</div>
+                                    </div>
+                                </div>
+                                <h6>New Visiters Every Week</h6>
+                            </div>
+                        </div>
+                        <!-- inline-facts end -->
+                        <!-- inline-facts  -->
+                        <div class="inline-facts-wrap">
+                            <div class="inline-facts">
+                                <div class="milestone-counter">
+                                    <div class="stats animaper">
+                                        <div class="num" data-content="0" data-num="12168">12168</div>
+                                    </div>
+                                </div>
+                                <h6>Happy Customers Every Year</h6>
+                            </div>
+                        </div>
+                        <!-- inline-facts end -->
+                        <!-- inline-facts  -->
+                        <div class="inline-facts-wrap">
+                            <div class="inline-facts">
+                                <div class="milestone-counter">
+                                    <div class="stats animaper">
+                                        <div class="num" data-content="0" data-num="172">172</div>
+                                    </div>
+                                </div>
+                                <h6>Won Awards</h6>
+                            </div>
+                        </div>
+                        <!-- inline-facts end -->
+                        <!-- inline-facts  -->
+                        <div class="inline-facts-wrap">
+                            <div class="inline-facts">
+                                <div class="milestone-counter">
+                                    <div class="stats animaper">
+                                        <div class="num" data-content="0" data-num="732">732</div>
+                                    </div>
+                                </div>
+                                <h6>Weekly Deliveries</h6>
+                            </div>
+                        </div>
+                        <!-- inline-facts end -->   
                 </div>
             </div>
             <div class="clearfix"></div>
-            <div class="testimonilas-carousel-wrap fl-wrap">
-                <div class="tc-button tc-button-next"><i class="fas fa-caret-right"></i></div>
-                <div class="tc-button tc-button-prev"><i class="fas fa-caret-left"></i></div>
-                <div class="testimonilas-carousel">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <!--testi-item-->
-                            <div class="swiper-slide">
-                                <div class="testi-item fl-wrap">
-                                    <div class="testi-avatar"><img src="{{ asset('client/images/avatar/2.jpg')}}"
-                                            alt=""></div>
-                                    <div class="testimonilas-text fl-wrap">
-                                        <h3>Andy Dimasky</h3>
-                                        <div class="star-rating" data-starrating="5"> </div>
-                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc.
-                                            Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed
-                                            sapien dui. Nulla auctor sit amet sem non porta. "</p>
-                                        <span class="testi-number">01.</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--testi-item end-->
-                            <!--testi-item-->
-                            <div class="swiper-slide">
-                                <div class="testi-item fl-wrap">
-                                    <div class="testi-avatar"><img src=" {{ asset('client/images/avatar/3.jpg')}}"
-                                            alt=""></div>
-                                    <div class="testimonilas-text fl-wrap">
-                                        <h3>Frank Dellov</h3>
-                                        <div class="star-rating" data-starrating="4"> </div>
-                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc.
-                                            Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed
-                                            sapien dui. Nulla auctor sit amet sem non porta. "</p>
-                                        <span class="testi-number">02.</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--testi-item end-->
-                            <!--testi-item-->
-                            <div class="swiper-slide">
-                                <div class="testi-item fl-wrap">
-                                    <div class="testi-avatar"><img src=" {{ asset('client/images/avatar/4.jpg')}}"
-                                            alt=""></div>
-                                    <div class="testimonilas-text fl-wrap">
-                                        <h3>Centa Simpson</h3>
-                                        <div class="star-rating" data-starrating="5"> </div>
-                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc.
-                                            Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed
-                                            sapien dui. Nulla auctor sit amet sem non porta. "</p>
-                                        <span class="testi-number">03.</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--testi-item end-->
-                            <!--testi-item-->
-                            <div class="swiper-slide">
-                                <div class="testi-item fl-wrap">
-                                    <div class="testi-avatar"><img src=" {{ asset('client/images/avatar/5.jpg')}}"
-                                            alt=""></div>
-                                    <div class="testimonilas-text fl-wrap">
-                                        <h3>Nicolo Svensky</h3>
-                                        <div class="star-rating" data-starrating="5"> </div>
-                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc.
-                                            Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed
-                                            sapien dui. Nulla auctor sit amet sem non porta. "</p>
-                                        <span class="testi-number">04.</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--testi-item end-->
-                        </div>
-                    </div>
-                </div>
-                <div class="tc-pagination"></div>
-            </div>
-        </section>
+            </section>
+        
         <!-- section end  -->
     </div>
     <!-- content end  -->
@@ -880,3 +817,65 @@
 
 
 @endsection
+{{-- 
+
+<section class="parallax-section dark-bg hidden-section" data-scrollax-parent="true">
+    <div class="brush-dec2"></div>
+    <div class="brush-dec"></div>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="section-title">
+            <h4>What said about us</h4>
+            <h2>Customer Reviews</h2>
+            <div class="dots-separator fl-wrap"><span></span></div>
+        </div>
+        <!-- inline-facts -->
+        <div class="inline-facts-wrap">
+            <div class="inline-facts">
+                <div class="milestone-counter">
+                    <div class="stats animaper">
+                        <div class="num" data-content="0" data-num="254">154</div>
+                    </div>
+                </div>
+                <h6>New Visiters Every Week</h6>
+            </div>
+        </div>
+        <!-- inline-facts end -->
+        <!-- inline-facts  -->
+        <div class="inline-facts-wrap">
+            <div class="inline-facts">
+                <div class="milestone-counter">
+                    <div class="stats animaper">
+                        <div class="num" data-content="0" data-num="12168">12168</div>
+                    </div>
+                </div>
+                <h6>Happy Customers Every Year</h6>
+            </div>
+        </div>
+        <!-- inline-facts end -->
+        <!-- inline-facts  -->
+        <div class="inline-facts-wrap">
+            <div class="inline-facts">
+                <div class="milestone-counter">
+                    <div class="stats animaper">
+                        <div class="num" data-content="0" data-num="172">172</div>
+                    </div>
+                </div>
+                <h6>Won Awards</h6>
+            </div>
+        </div>
+        <!-- inline-facts end -->
+        <!-- inline-facts  -->
+        <div class="inline-facts-wrap">
+            <div class="inline-facts">
+                <div class="milestone-counter">
+                    <div class="stats animaper">
+                        <div class="num" data-content="0" data-num="732">732</div>
+                    </div>
+                </div>
+                <h6>Weekly Deliveries</h6>
+            </div>
+        </div>
+        <!-- inline-facts end -->                          
+    </div>
+</section> --}}

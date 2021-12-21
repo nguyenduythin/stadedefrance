@@ -7,18 +7,19 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class BookingMail extends Mailable
+class BookingMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
+    public $infoBooking;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($infoBooking)
     {
-        //
+        $this->infoBooking = $infoBooking;
     }
 
     /**
@@ -28,6 +29,6 @@ class BookingMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('admin.emails.bookingMail');
+        return $this->subject('Hóa đơn đặt lịch')->view('admin.emails.bookingMail');
     }
 }

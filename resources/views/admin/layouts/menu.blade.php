@@ -67,7 +67,7 @@
                         data-feather='box'></i><span class="menu-title text-truncate" data-i18n="Email">Sản
                         phẩm</span></a>
             </li>
-            <li class=" nav-item {{ request()->is('admin-stadedefrance/cate-product*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{ route('admin.cate.product.list') }}"><i
+            <li class=" nav-item {{ request()->is('admin-stadedefrance/ct-product*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{ route('admin.cate.product.list') }}"><i
                         data-feather='list'></i><span class="menu-title text-truncate" data-i18n="Chat">Danh
                         mục</span></a>
             </li>

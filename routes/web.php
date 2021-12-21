@@ -51,9 +51,6 @@ Route::get('/event', function () {
 Route::get('/menu', function () {
     return view('client.pages.menu');
 })->name('menu');
-Route::get('/*', function () {
-    return view('client.errors.error404');
-})->name('error');
 Route::get('/thank',  function () {
     return view('client.pages.thank');
 })->name('client.thank');
@@ -79,7 +76,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
         Route::get('/booking',[BookingController::class, 'index'])->name('admin.booking.list');
         Route::get('/product', [ProductController::class, 'index'])->name('admin.product.list');
-        Route::get('/cate-product', [CateProductController::class, 'index'])->name('admin.cate.product.list');
+        Route::get('/ct-product', [CateProductController::class, 'index'])->name('admin.cate.product.list');
         // Route::get('/gallery', [GalleryController::class, 'index'])->name('admin.gallery.list');
         Route::get('/cate-gallery/{id}', [GalleryController::class, 'index'])->name('admin.gallery.list');
         Route::get('/cate', [CateGalleryController::class, 'index'])->name('admin.cate.gallery.list');

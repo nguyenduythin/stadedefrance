@@ -23,7 +23,7 @@
     </section>
     <!--  section  end-->  
     <!--  section  -->   
-    <section class="hidden-section big-padding" data-scrollax-parent="true">
+    {{-- <section class="hidden-section big-padding" data-scrollax-parent="true">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -63,10 +63,10 @@
             <div class="section-dec sec-dec_top"></div>
             <div class="wave-bg" data-scrollax="properties: { translateY: '-150px' }"></div>							
         </div>
-    </section>
+    </section> --}}
     <!--  section  end-->  
     <!--  section  -->   
-    <section class="parallax-section dark-bg hidden-section" data-scrollax-parent="true">
+    {{-- <section class="parallax-section dark-bg hidden-section" data-scrollax-parent="true">
         <div class="brush-dec2"></div>
         <div class="brush-dec"></div>
         <div class="bg par-elem bg_tabs"  data-bg="{{ asset('client/images/bg/14.jpg') }} " data-scrollax="properties: { translateY: '30%' }"></div>
@@ -121,92 +121,90 @@
             </div>
             <!-- inline-facts end -->                          
         </div>
-    </section>
+    </section> --}}
     <!--  section  end-->  
     <!--  section  -->                               
     <section data-scrollax-parent="true">
         <div class="container">
-            <div class="section-title">
+            {{-- <div class="section-title">
                 <h4>Our awesome team</h4>
                 <h2>Met Our Chefs</h2>
                 <div class="dots-separator fl-wrap"><span></span></div>
-            </div>
+            </div> --}}
             <div class="about-wrap  fl-wrap">
                 <div class="row">
-                    <div class="col-md-4">
-                        <!-- team-item -->
-                        <div class="team-box">
-                            <div class="team-photo">
-                                <img src="{{ asset('client/images/team/1.jpg') }} " alt="" class="respimg">
-                                <div class="overlay"></div>
-                                <div class="team-social">
-                                    <span class="ts_title">Follow</span>
-                                    <ul class="no-list-style">
-                                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                    </ul>
+                    <div class="col-md-4 " style="margin-bottom:20px;">
+                        <a href="/312">
+                            <div class="team-box">
+                                <div class="team-photo">
+                                    <img src="{{ asset('client/images/team/2.jpg') }} " alt="" class="respimg">
+                                    <div class="overlay"></div>
+                                    <div class="team-social">
+                                    </div>
+                                </div>
+                                <div class="team-info fl-wrap" style="text-align:left;">
+                                    <h3  style="text-align:left !important;"> Austin Evon </h3>
+                                    <h4> <i class="far fa-calendar-alt"></i> 21/12/2021 10:00</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
                                 </div>
                             </div>
-                            <div class="team-info fl-wrap">
-                                <h3> Kevin  Gray </h3>
-                                <h4>Master chef in New York</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                    <!-- team-item  end-->
-                    <!-- team-item -->
-                    <div class="col-md-4">
-                        <div class="team-box">
-                            <div class="team-photo">
-                                <img src="{{ asset('client/images/team/2.jpg') }} " alt="" class="respimg">
-                                <div class="overlay"></div>
-                                <div class="team-social">
-                                    <span class="ts_title">Follow</span>
-                                    <ul class="no-list-style">
-                                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                    </ul>
+                    <div class="col-md-4 " style="margin-bottom:20px;">
+                        <a href="/312">
+                            <div class="team-box">
+                                <div class="team-photo">
+                                    <img src="{{ asset('client/images/team/2.jpg') }} " alt="" class="respimg">
+                                    <div class="overlay"></div>
+                                    <div class="team-social">
+                                    </div>
+                                </div>
+                                <div class="team-info fl-wrap" style="text-align:left;">
+                                    <h3  style="text-align:left !important;"> Austin Evon </h3>
+                                    <h4> <i class="far fa-calendar-alt"></i> 21/12/2021 10:00</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
                                 </div>
                             </div>
-                            <div class="team-info fl-wrap">
-                                <h3> Austin Evon </h3>
-                                <h4>Master chef in Florida</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                    <!-- team-item end  -->
-                    <!-- team-item -->
-                    <div class="col-md-4">
-                        <div class="team-box">
-                            <div class="team-photo">
-                                <img src="{{ asset('client/images/team/3.jpg') }} " alt="" class="respimg">
-                                <div class="overlay"></div>
-                                <div class="team-social">
-                                    <span class="ts_title">Follow</span>
-                                    <ul class="no-list-style">
-                                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                    </ul>
+                    <div class="col-md-4 " style="margin-bottom:20px;">
+                        <a href="/312">
+                            <div class="team-box">
+                                <div class="team-photo">
+                                    <img src="{{ asset('client/images/team/2.jpg') }} " alt="" class="respimg">
+                                    <div class="overlay"></div>
+                                    <div class="team-social">
+                                    </div>
+                                </div>
+                                <div class="team-info fl-wrap" style="text-align:left;">
+                                    <h3  style="text-align:left !important;"> Austin Evon </h3>
+                                    <h4> <i class="far fa-calendar-alt"></i> 21/12/2021 10:00</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
                                 </div>
                             </div>
-                            <div class="team-info fl-wrap">
-                                <h3> Taylor Roberts </h3>
-                                <h4>Master chef in Maiami</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     <!-- team-item end  -->
-                    <div class="col-md-8">
-                        <div class="align-text-block">
+                    <div class="col-md-4 " style="margin-bottom:20px;">
+                        <a href="/312">
+                            <div class="team-box">
+                                <div class="team-photo">
+                                    <img src="{{ asset('client/images/team/2.jpg') }} " alt="" class="respimg">
+                                    <div class="overlay"></div>
+                                    <div class="team-social">
+                                    </div>
+                                </div>
+                                <div class="team-info fl-wrap" style="text-align:left;">
+                                    <h3  style="text-align:left !important;"> Austin Evon </h3>
+                                    <h4> <i class="far fa-calendar-alt"></i> 21/12/2021 10:00</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                
+                    <div class="col-md-12" >
+                        <div class="align-text-block" style="margin-top:30px !important;">
                             <h4>Want to cook something tasty? Read our best recipes.</h4>
                             <a href="blog.html" class="btn">Recipes Book <i class="fal fa-long-arrow-right"></i></a>
                         </div>
@@ -218,7 +216,7 @@
         </div>
     </section>
     <!--  section  end-->  
-    <!--  section  -->                               
+    {{-- <!--  section  -->                               
     <section class="parallax-section dark-bg hidden-section" data-scrollax-parent="true">
         <div class="brush-dec2"></div>
         <div class="brush-dec"></div>
@@ -309,7 +307,7 @@
             <div class="tc-pagination"></div>
         </div>
     </section>
-    <!--  section  end-->  
+    <!--  section  end-->   --}}
     <div class="brush-dec2 brush-dec_bottom"></div>
 </div>
 <!-- content end  -->
