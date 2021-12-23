@@ -12,7 +12,7 @@
                         <!-- swiper-slide-->
                         <div class="swiper-slide">
                             <div class="fs-slider-item fl-wrap">
-                                <div class="bg "  data-bg=" {{ asset('client/images/bg/thinduy/DSC01183-min.jpg')}}"
+                                <div class="bg "  data-bg=" {{ asset('client/images/bg/thinduy/DSC01183.jpg')}}"
                                     data-swiper-parallax="40%"
                                     ></div>
                                 <div class="overlay" style="opacity:0.3;"></div>
@@ -24,7 +24,7 @@
                         <!-- swiper-slide-->
                         <div class="swiper-slide">
                             <div class="fs-slider-item fl-wrap">
-                                <div class="bg " data-bg=" {{ asset('client/images/bg/thinduy/DSC01494-min.jpg')}}"
+                                <div class="bg " data-bg=" {{ asset('client/images/bg/thinduy/DSC01494.jpg')}}"
                                     data-swiper-parallax="40%"
                                     ></div>
                                     <div class="overlay" style="opacity:0.3;"></div>
@@ -34,7 +34,7 @@
 
                         <div class="swiper-slide">
                             <div class="fs-slider-item fl-wrap">
-                                <div class="bg " data-bg="{{ asset('client/images/bg/thinduy/DSC01365-min.jpg')}}"
+                                <div class="bg " data-bg="{{ asset('client/images/bg/thinduy/DSC01365.jpg')}}"
                                     data-swiper-parallax="40%"
                                     ></div>
                                 <div class="overlay" style="opacity:0.3;"></div>
@@ -105,6 +105,7 @@
                     <div class="col-md-6">
                         <div class="image-collge-wrap fl-wrap">
                             <div class="main-iamge">
+                                {{-- <iframe  style="max-width: fit-content; max-height:fit-content;"  class="video-style"  src="https://www.youtube.com/embed/LTLS9tbSo0Q" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
                                 {{-- <img src=" {{ asset('client/images/all/3.jpg')}}" alt="" style="background-color: black;"> --}}
                                 <video width="100%" class="video-style" height="130%" controls autoplay onloadstart="this.volume=0.5">
                                 <source src="{{ asset('storage/Stadedefrance.mp4')}}" type="video/mp4">

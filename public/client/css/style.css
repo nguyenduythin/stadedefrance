@@ -1772,7 +1772,7 @@ section.parallax-section.hero-section .section-title h2 {
 	overflow:hidden;
 	width:100%;
 	float:left;
-    box-shadow: 0 9px 16px rgba(58, 87, 135, 0.35);
+    /* box-shadow: 0 9px 16px rgba(58, 87, 135, 0.35); */
 }
 
 .main-iamge img ,.images-collage-item img , .menu-item-media img {

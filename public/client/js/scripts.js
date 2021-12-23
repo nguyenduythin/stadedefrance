@@ -373,12 +373,12 @@ function initRestabook() {
             preloadImages: false,
             loop: true,
             grabCursor: true,
-            speed: 2400,
-            spaceBetween: 0,
+            speed: 1400,
+            // spaceBetween: 0,
             effect: "slide",
             mousewheel: false,
             parallax: true,
-            lazy: true,
+            // lazy: true,
 
 
             init: false,

@@ -239,5 +239,5 @@ blockquote,
     display: none;
 }
 .main-iamge {
-    box-shadow: 0 9px 16px rgba(0, 0, 0, 0.35);
+    /* box-shadow: 0 9px 16px rgba(0, 0, 0, 0.35); */
 }
