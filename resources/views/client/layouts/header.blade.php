@@ -3,7 +3,7 @@
     <div class="header-top">
         <div class="container">
             <div class="lang-wrap"><a href="#" class="act-lang">En</a><span>/</span><a href="#">Vi</a></div>
-            <div class="header-top_contacts"><a href="#"><span>Call now:</span> +489756412322</a><a href="#"><span>Write :</span> yourmail@domain.com</a></div>
+            <div class="header-top_contacts"><a href="#"><span>Call now:</span> +0921898999</a><a href="#"><span>Email :</span> stadedefrancestore@domain.com</a></div>
         </div>
     </div>
     <!--header-top end -->

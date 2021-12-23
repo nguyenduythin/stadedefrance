@@ -5,7 +5,7 @@
   <div class="content">
     <!--  section  -->  
     <section class="parallax-section hero-section hidden-section" data-scrollax-parent="true">
-        <div class="bg par-elem "  data-bg="{{ asset('client/images/bg/12.jpg')}}" data-scrollax="properties: { translateY: '30%' }"></div>
+        <div class="bg par-elem "  data-bg="{{ asset('client/images/banner/bn1.jpg') }} " data-scrollax="properties: { translateY: '30%' }"></div>
         <div class="overlay"></div>
         <div class="container">
             <div class="section-title">
@@ -142,7 +142,7 @@
                                 <!-- hero-menu-item end-->                                                                                                                  
                                 <!-- hero-menu-item-->
                                 <div class="hero-menu-item">
-                                    <a href="images/menu/8.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/8.jpg" alt=""></a>                                                        
+                                    <a href="{{ asset('client/images/menu/8.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/8.jpg')}}" alt=""></a>                                                        
                                     <div class="hero-menu-item-title fl-wrap">
                                         <h6> Slow-Roasted Prime Rib</h6>
                                         <div class="hmi-dec"></div>
@@ -161,7 +161,7 @@
                                 <div id="tab-2" class="tab-content">
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/9.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/9.jpg" alt=""></a>
+                                        <a href="{{ asset('client/images/menu/9.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/9.jpg')}}" alt=""></a>
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Fried Potatoes</h6>
                                             <div class="hmi-dec"></div>
@@ -175,7 +175,7 @@
                                     <!-- hero-menu-item end-->  
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/10.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/10.jpg" alt=""></a>                                                        
+                                        <a href="{{ asset('client/images/menu/10.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/10.jpg')}}" alt=""></a>                                                        
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Doner Burger</h6>
                                             <div class="hmi-dec"></div>
@@ -189,7 +189,7 @@
                                     <!-- hero-menu-item end-->                                                           
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/3.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/3.jpg" alt=""></a>                                                        
+                                        <a href="{{ asset('client/images/menu/7.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" alt=""></a>                                                        
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Steak Filet</h6>
                                             <div class="hmi-dec"></div>
@@ -203,7 +203,7 @@
                                     <!-- hero-menu-item end-->                                                           
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/8.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/8.jpg" alt=""></a>                                                        
+                                        <a href="{{ asset('client/images/menu/7.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" alt=""></a>                                                        
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Cayenne Shrimp</h6>
                                             <div class="hmi-dec"></div>
@@ -217,7 +217,7 @@
                                     <!-- hero-menu-item end-->                                                            
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/2.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/2.jpg" alt=""></a>                                                        
+                                        <a href=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" alt=""></a>                                                        
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Meatball tagliatelle</h6>
                                             <div class="hmi-dec"></div>
@@ -237,7 +237,7 @@
                                 <div id="tab-3" class="tab-content">
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/10.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/10.jpg" alt=""></a>                                                        
+                                        <a href=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" alt=""></a>                                                        
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Soft shell crab</h6>
                                             <div class="hmi-dec"></div>
@@ -251,7 +251,7 @@
                                     <!-- hero-menu-item end-->  
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/7.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/7.jpg" alt=""></a>                                                         
+                                        <a href=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" alt=""></a>                                                         
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Tarte Tatin</h6>
                                             <div class="hmi-dec"></div>
@@ -265,7 +265,7 @@
                                     <!-- hero-menu-item end-->                                                           
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/9.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/9.jpg" alt=""></a>                                                        
+                                        <a href=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" alt=""></a>                                                        
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Creme Brulee</h6>
                                             <div class="hmi-dec"></div>
@@ -279,7 +279,7 @@
                                     <!-- hero-menu-item end-->                                                           
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/4.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/4.jpg" alt=""></a>                                                         
+                                        <a href=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" alt=""></a>                                                         
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Lemon Meringue</h6>
                                             <div class="hmi-dec"></div>
@@ -299,7 +299,7 @@
                                 <div id="tab-4" class="tab-content">
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/1.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/1.jpg" alt=""></a>
+                                        <a href=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" alt=""></a>
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>  Lobster with melted mozarella</h6>
                                             <div class="hmi-dec"></div>
@@ -313,7 +313,7 @@
                                     <!-- hero-menu-item end-->  
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/2.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/2.jpg" alt=""></a>
+                                        <a href=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" alt=""></a>
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>  Butterfly fried shrimps platter</h6>
                                             <div class="hmi-dec"></div>
@@ -327,7 +327,7 @@
                                     <!-- hero-menu-item end-->
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/8.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/8.jpg" alt=""></a>
+                                        <a href=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" alt=""></a>
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Filet De Saumon</h6>
                                             <div class="hmi-dec"></div>
@@ -341,7 +341,7 @@
                                     <!-- hero-menu-item end-->  
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/5.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/5.jpg" alt=""></a>
+                                        <a href=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/7.jpg')}}" alt=""></a>
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Chapel Down</h6>
                                             <div class="hmi-dec"></div>
@@ -361,7 +361,7 @@
                                 <div id="tab-5" class="tab-content">
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/2.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/2.jpg" alt=""></a>
+                                        <a href=" {{ asset('client/images/menu/thumbnails/2.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/2.jpg')}}" alt=""></a>
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Kiwi Coctail</h6>
                                             <div class="hmi-dec"></div>
@@ -375,7 +375,7 @@
                                     <!-- hero-menu-item end-->  
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/5.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/5.jpg" alt=""></a>
+                                        <a href=" {{ asset('client/images/menu/5.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/5.jpg')}}" alt=""></a>
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Summer Beer</h6>
                                             <div class="hmi-dec"></div>
@@ -389,7 +389,7 @@
                                     <!-- hero-menu-item end-->                                                           
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/6.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/6.jpg" alt=""></a>
+                                        <a href=" {{ asset('client/images/menu/6.jpg')}}" class="hero-menu-item-img image-popup"><img src=" {{ asset('client/images/menu/thumbnails/6.jpg')}}" alt=""></a>
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Red Mojitos</h6>
                                             <div class="hmi-dec"></div>
@@ -403,7 +403,7 @@
                                     <!-- hero-menu-item end-->                                                           
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/9.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/9.jpg" alt=""></a>
+                                        <a href="{{ asset('client/images/menu/9.jpg')}}" class="hero-menu-item-img image-popup"><img src="{{ asset('client/images/menu/thumbnails/9.jpg')}}" alt=""></a>
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Cabernet Sauvignon</h6>
                                             <div class="hmi-dec"></div>
@@ -417,7 +417,7 @@
                                     <!-- hero-menu-item end--> 
                                     <!-- hero-menu-item-->
                                     <div class="hero-menu-item">
-                                        <a href="images/menu/1.jpg" class="hero-menu-item-img image-popup"><img src="images/menu/thumbnails/1.jpg" alt=""></a>
+                                        <a href="{{ asset('client/images/menu/1.jpg')}}" class="hero-menu-item-img image-popup"><img src="{{ asset('client/images/menu/thumbnails/1.jpg')}}" alt=""></a>
                                         <div class="hero-menu-item-title fl-wrap">
                                             <h6>Italian Soup</h6>
                                             <div class="hmi-dec"></div>

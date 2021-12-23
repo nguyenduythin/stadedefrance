@@ -5,7 +5,7 @@
  <div class="content">
     <!--  section  -->  
     <section class="parallax-section hero-section hidden-section" data-scrollax-parent="true">
-        <div class="bg par-elem "  data-bg="{{ asset('client/images/bg/10.jpg') }} " data-scrollax="properties: { translateY: '30%' }"></div>
+        <div class="bg par-elem "  data-bg="{{ asset('client/images/banner/bn3.jpg') }} " data-scrollax="properties: { translateY: '30%' }"></div>
         <div class="overlay"></div>
         <div class="container">
             <div class="section-title">
@@ -133,11 +133,11 @@
             </div> --}}
             <div class="about-wrap  fl-wrap">
                 <div class="row">
-                    <div class="col-md-4 " style="margin-bottom:20px;">
+                    <div class="col-md-6 " style="margin-bottom:20px;">
                         <a href="/312">
                             <div class="team-box">
                                 <div class="team-photo">
-                                    <img src="{{ asset('client/images/team/2.jpg') }} " alt="" class="respimg">
+                                    <img src="{{ asset('client/images/event/event (1).jpg') }} " alt="" class="respimg">
                                     <div class="overlay"></div>
                                     <div class="team-social">
                                     </div>
@@ -150,11 +150,11 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-4 " style="margin-bottom:20px;">
+                    <div class="col-md-6 " style="margin-bottom:20px;">
                         <a href="/312">
                             <div class="team-box">
                                 <div class="team-photo">
-                                    <img src="{{ asset('client/images/team/2.jpg') }} " alt="" class="respimg">
+                                    <img src="{{ asset('client/images/event/event (2).jpg') }} " alt="" class="respimg">
                                     <div class="overlay"></div>
                                     <div class="team-social">
                                     </div>
@@ -167,11 +167,11 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-4 " style="margin-bottom:20px;">
+                    <div class="col-md-6 " style="margin-bottom:20px;">
                         <a href="/312">
                             <div class="team-box">
                                 <div class="team-photo">
-                                    <img src="{{ asset('client/images/team/2.jpg') }} " alt="" class="respimg">
+                                    <img src="{{ asset('client/images/event/event (3).jpg') }} " alt="" class="respimg">
                                     <div class="overlay"></div>
                                     <div class="team-social">
                                     </div>
@@ -185,11 +185,45 @@
                         </a>
                     </div>
                     <!-- team-item end  -->
-                    <div class="col-md-4 " style="margin-bottom:20px;">
+                    <div class="col-md-6 " style="margin-bottom:20px;">
                         <a href="/312">
                             <div class="team-box">
                                 <div class="team-photo">
-                                    <img src="{{ asset('client/images/team/2.jpg') }} " alt="" class="respimg">
+                                    <img src="{{ asset('client/images/event/event (4).jpg') }} " alt="" class="respimg">
+                                    <div class="overlay"></div>
+                                    <div class="team-social">
+                                    </div>
+                                </div>
+                                <div class="team-info fl-wrap" style="text-align:left;">
+                                    <h3  style="text-align:left !important;"> Austin Evon </h3>
+                                    <h4> <i class="far fa-calendar-alt"></i> 21/12/2021 10:00</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 " style="margin-bottom:20px;">
+                        <a href="/312">
+                            <div class="team-box">
+                                <div class="team-photo">
+                                    <img src="{{ asset('client/images/event/event (5).jpg') }} " alt="" class="respimg">
+                                    <div class="overlay"></div>
+                                    <div class="team-social">
+                                    </div>
+                                </div>
+                                <div class="team-info fl-wrap" style="text-align:left;">
+                                    <h3  style="text-align:left !important;"> Austin Evon </h3>
+                                    <h4> <i class="far fa-calendar-alt"></i> 21/12/2021 10:00</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 " style="margin-bottom:20px;">
+                        <a href="/312">
+                            <div class="team-box">
+                                <div class="team-photo">
+                                    <img src="{{ asset('client/images/event/event (6).jpg') }} " alt="" class="respimg">
                                     <div class="overlay"></div>
                                     <div class="team-social">
                                     </div>

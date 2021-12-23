@@ -130,7 +130,7 @@
         <!-- section   -->
         <section class="column-section no-padding hidden-section" data-scrollax-parent="true" id="sec4">
             <div class="column-wrap-bg left-wrap">
-                <div class="bg par-elem " data-bg="{{ asset('client/images/bg/12.jpg')}}"
+                <div class="bg par-elem " data-bg="{{ asset('client/images/home/bgh1.jpg')}}"
                     data-scrollax="properties: { translateY: '30%' }"></div>
                 <div class="overlay"></div>
                 <div class="quote-box">
@@ -292,7 +292,7 @@
         <section class="parallax-section dark-bg hidden-section" data-scrollax-parent="true">
             <div class="brush-dec2"></div>
             <div class="brush-dec"></div>
-            <div class="bg par-elem bg_tabs" data-bg="{{ asset('client/images/bg/4.jpg')}}"
+            <div class="bg par-elem bg_tabs" data-bg="{{ asset('client/images/home/dm1.jpg')}}"
                 data-scrollax="properties: { translateY: '30%' }"></div>
             <div class="cd-tabs-layer" data-frame="10">
                 <div class="tabs-layer"></div>
@@ -312,19 +312,19 @@
                             <div class="hero-menu_header fl-wrap">
                                 <ul class="tabs-menu no-list-style change_bg">
                                     <li class="current"><a href="#tab-1"
-                                            data-bgtab="{{ asset('client/images/bg/4.jpg')}}"><span>01.</span>Main
+                                            data-bgtab="{{ asset('client/images/home/dm1.jpg')}}"><span>01.</span>Main
                                             dishes</a></li>
                                     <li><a href="#tab-2"
-                                            data-bgtab="{{ asset('client/images/bg/6.jpg')}}"><span>02.</span>Starter</a>
+                                            data-bgtab="{{ asset('client/images/home/dm3.jpg')}}"><span>02.</span>Starter</a>
                                     </li>
                                     <li><a href="#tab-3"
-                                            data-bgtab="{{ asset('client/images/bg/7.jpg')}}"><span>03.</span>Desserts</a>
+                                            data-bgtab="{{ asset('client/images/home/dm4.jpg')}}"><span>03.</span>Desserts</a>
                                     </li>
                                     <li><a href="#tab-4"
-                                            data-bgtab="{{ asset('client/images/bg/5.jpg')}}"><span>04.</span>Sea
+                                            data-bgtab="{{ asset('client/images/home/dm5.jpg')}}"><span>04.</span>Sea
                                             Food</a></li>
                                     <li><a href="#tab-5"
-                                            data-bgtab="{{ asset('client/images/bg/9.jpg')}}"><span>05.</span>Drinks</a>
+                                            data-bgtab="{{ asset('client/images/home/dm2.jpg')}}"><span>05.</span>Drinks</a>
                                     </li>
                                 </ul>
                             </div>
@@ -605,7 +605,7 @@
             <div class="container">
                 <div class="section-title">
                     <h4>Our awesome team</h4>
-                    <h2>Met Our Chefs</h2>
+                    <h2>Top events our</h2>
                     <div class="dots-separator fl-wrap"><span></span></div>
                 </div>
                 <div class="about-wrap  fl-wrap">
@@ -614,7 +614,7 @@
                             <!-- team-item -->
                             <div class="team-box">
                                 <div class="team-photo">
-                                    <img src="{{ asset('client/images/team/1.jpg')}}" alt="" class="respimg">
+                                    <img src="{{ asset('client/images/home/ev (1).jpg')}}" alt="" class="respimg">
                                     <div class="overlay"></div>
                                 
                                 </div>
@@ -631,7 +631,7 @@
                         <div class="col-md-4">
                             <div class="team-box">
                                 <div class="team-photo">
-                                    <img src="{{ asset('client/images/team/2.jpg')}}" alt="" class="respimg">
+                                    <img src="{{ asset('client/images/home/ev (2).jpg')}}" alt="" class="respimg">
                                     <div class="overlay"></div>
                                    
                                 </div>
@@ -648,7 +648,7 @@
                         <div class="col-md-4">
                             <div class="team-box">
                                 <div class="team-photo">
-                                    <img src=" {{ asset('client/images/team/3.jpg')}}" alt="" class="respimg">
+                                    <img src="{{ asset('client/images/home/ev (3).jpg')}}" alt="" class="respimg">
                                     <div class="overlay"></div>
                                   
                                 </div>
@@ -661,7 +661,7 @@
                             </div>
                         </div>
                         <!-- team-item end  -->
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <div class="align-text-block">
                                 <h4>Want to cook something tasty? Read our best recipes.</h4>
                                 <a href="blog.html" class="btn">Recipes Book <i class="fal fa-long-arrow-right"></i></a>
@@ -677,7 +677,7 @@
         <!-- section   -->
         <section class="column-section no-padding hidden-section" data-scrollax-parent="true">
             <div class="column-wrap-bg right-wrap">
-                <div class="bg par-elem " data-bg="{{ asset('client/images/bg/10.jpg')}}"
+                <div class="bg par-elem " data-bg="{{ asset('client/images/home/bgh2.jpg')}}"
                     data-scrollax="properties: { translateY: '30%' }"></div>
                 <div class="overlay"></div>
                 <div class="column-wrap-bg-text">

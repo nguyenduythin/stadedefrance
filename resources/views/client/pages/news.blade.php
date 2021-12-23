@@ -5,7 +5,7 @@
    <div class="content">
     <!--  section  -->  
     <section class="parallax-section hero-section hidden-section" data-scrollax-parent="true">
-        <div class="bg par-elem "  data-bg="{{ asset('client/images/bg/11.jpg') }} " data-scrollax="properties: { translateY: '30%' }"></div>
+        <div class="bg par-elem "  data-bg="{{ asset('client/images/banner/bn4.jpg') }}  " data-scrollax="properties: { translateY: '30%' }"></div>
         <div class="overlay"></div>
         <div class="container">
             <div class="section-title">
@@ -43,9 +43,9 @@
                                     <div class="single-slider fl-wrap">
                                         <div class="swiper-container">
                                             <div class="swiper-wrapper lightgallery">
-                                                <div class="swiper-slide hov_zoom"><img src="{{ asset('client/images/all/9.jpg') }} " alt=""><a href="images/all/9.jpg" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a></div>
-                                                <div class="swiper-slide hov_zoom"><img src="{{ asset('client/images/all/10.jpg') }} " alt=""><a href="images/all/10.jpg" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a></div>
-                                                <div class="swiper-slide hov_zoom"><img src="{{ asset('client/images/all/11.jpg') }} " alt=""><a href="images/all/11.jpg" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a></div>
+                                                <div class="swiper-slide hov_zoom"><img src="{{ asset('client/images/news/new (5).jpg') }} " alt=""><a href="{{ asset('client/images/news/new (5).jpg') }}" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a></div>
+                                                <div class="swiper-slide hov_zoom"><img src="{{ asset('client/images/news/new (2).jpg') }} " alt=""><a href="{{ asset('client/images/news/new (2).jpg') }}" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a></div>
+                                                <div class="swiper-slide hov_zoom"><img src="{{ asset('client/images/news/new (8).jpg') }} " alt=""><a href="{{ asset('client/images/news/new (8).jpg') }}" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a></div>
                                             </div>
                                             <div class="ss-slider-pagination"></div>
                                             <div class="ss-slider-cont ss-slider-cont-prev"><i class="fas fa-caret-left"></i></div>
@@ -87,7 +87,7 @@
                             </ul>
                             <!-- blog media -->
                             <div class="blog-media fl-wrap">
-                                <img src="{{ asset('client/images/all/4.jpg') }} " class="respimg" alt="">
+                                <img src="{{ asset('client/images/news/new (6).jpg') }} " class="respimg" alt="">
                             </div>
                             <!-- blog media end -->
                             <div class="blog-text fl-wrap">
@@ -121,7 +121,7 @@
                             </ul>
                             <!-- blog media -->
                             <div class="blog-media fl-wrap">
-                                <img src="{{ asset('client/images/all/11.jpg') }} " class="respimg" alt="">
+                                <img src="{{ asset('client/images/news/new (14).jpg') }} " class="respimg" alt="">
                             </div>
                             <!-- blog media end -->
                             <div class="blog-text fl-wrap">
@@ -155,7 +155,7 @@
                             </ul>
                             <!-- blog media -->
                             <div class="blog-media fl-wrap">
-                                <img src="{{ asset('client/images/all/15.jpg') }} " class="respimg" alt="">
+                                <img src="{{ asset('client/images/news/new (15).jpg') }}" class="respimg" alt="">
                             </div>
                             <!-- blog media end -->
                             <div class="blog-text fl-wrap">

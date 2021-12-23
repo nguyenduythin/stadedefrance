@@ -5,7 +5,7 @@
   <div class="content">
     <!--  section  -->  
     <section class="parallax-section hero-section hidden-section" data-scrollax-parent="true">
-        <div class="bg par-elem "  data-bg="{{ asset('client/images/bg/4.jpg') }} " data-scrollax="properties: { translateY: '30%' }"></div>
+        <div class="bg par-elem "  data-bg="{{ asset('client/images/banner/bn2.jpg') }}  " data-scrollax="properties: { translateY: '30%' }"></div>
         <div class="overlay"></div>
         <div class="container">
             <div class="section-title">
@@ -32,32 +32,222 @@
                 <a href="#" class="gallery-filter " data-filter=".dishes"><span>02.</span>Dishes</a>
                 <a href="#" class="gallery-filter" data-filter=".resta_img"><span>03.</span>Restaurant</a>
                 <a href="#" class="gallery-filter" data-filter=".events"><span>04.</span>Events</a>
-                <a href="#" class="gallery-filter" data-filter=".video_links"><span>05.</span>Video</a>
+                <a href="#" class="gallery-filter" data-filter=".model"><span>05.</span>Model</a>
+
+                <a href="#" class="gallery-filter" data-filter=".food"><span>06.</span>Food</a>
             </div>
             <!-- gallery-filters end-->
             <!-- gallery start -->
             <div class="gallery-items min-pad  lightgallery three-column fl-wrap" style="margin-bottom:50px;">
                 <!-- gallery-item-->
-                <div class="gallery-item dishes">
+                <div class="gallery-item dishes events">
                     <div class="grid-item-holder hov_zoom">
-                        <a href="{{ asset('client/images/all/1.jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
-                        <img  src="{{ asset('client/images/all/1.jpg') }} "    alt="">
+                        <a href="{{ asset('client/images/gallery/gl (4).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (4).jpg') }} "    alt="">
                     </div>
                 </div>
                 <!-- gallery-item end-->
                 <!-- gallery-item-->
                 <div class="gallery-item resta_img events">
                     <div class="grid-item-holder hov_zoom">
-                        <a href="{{ asset('client/images/all/14.jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
-                        <img  src="{{ asset('client/images/all/14.jpg') }} "    alt="">
+                        <a href="{{ asset('client/images/gallery/gl (1).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (1).jpg') }} "    alt="">
                     </div>
                 </div>
-                <!-- gallery-item end-->
-                <!-- gallery-item-->
-                <div class="gallery-item gallery-item-second dishes">
+                <div class="gallery-item  events">
                     <div class="grid-item-holder hov_zoom">
-                        <a href="{{ asset('client/images/all/9.jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
-                        <img  src="{{ asset('client/images/all/9.jpg') }} "    alt="">
+                        <a href="{{ asset('client/images/gallery/gl (2).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (2).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item resta_img events">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (3).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (3).jpg') }} "    alt="">
+                    </div>
+                </div>
+
+                <div class="gallery-item  resta_img">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (5).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (5).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  resta_img">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (6).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (6).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  resta_img">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (7).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (7).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  resta_img">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (8).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (8).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  food">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (22).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (22).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  food">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (21).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (21).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  food">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (20).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (20).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  food">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (19).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (19).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  food">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (18).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (18).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  food">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (17).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (17).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  food">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (16).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (16).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  food">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (15).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (15).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  model">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/model/md (1).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/model/md (1).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  model">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/model/md (2).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/model/md (2).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  model">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/model/md (3).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/model/md (3).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  model">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/model/md (4).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/model/md (4).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  model">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/model/md (5).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/model/md (5).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  model">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/model/md (6).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/model/md (6).jpg') }} "    alt="">
+                    </div>
+                </div> <div class="gallery-item  model">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/model/md (7).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/model/md (7).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  model">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/model/md (8).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/model/md (8).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  resta_img">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (10).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (10).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  model">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (35).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (35).jpg') }} "    alt="">
+                    </div>
+                </div> <div class="gallery-item  model">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (36).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (36).jpg') }} "    alt="">
+                    </div>
+                </div> <div class="gallery-item  model">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (37).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (37).jpg') }} "    alt="">
+                    </div>
+                </div> <div class="gallery-item  model">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (38).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (38).jpg') }} "    alt="">
+                    </div>
+                </div> <div class="gallery-item  events">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (39).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (39).jpg') }} "    alt="">
+                    </div>
+                </div> <div class="gallery-item  events">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (40).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (40).jpg') }} "    alt="">
+                    </div>
+                </div> <div class="gallery-item  events">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (41).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (41).jpg') }} "    alt="">
+                    </div>
+                </div> <div class="gallery-item  events">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (42).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (42).jpg') }} "    alt="">
+                    </div>
+                </div> <div class="gallery-item  events">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (43).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (43).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item  events">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/gallery/gl (44).jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/gallery/gl (44).jpg') }} "    alt="">
+                    </div>
+                </div>
+                <div class="gallery-item resta_img events">
+                    <div class="grid-item-holder hov_zoom">
+                        <a href="{{ asset('client/images/all/14.jpg') }} " class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                        <img  src="{{ asset('client/images/all/14.jpg') }} "    alt="">
                     </div>
                 </div>
                 <!-- gallery-item end-->

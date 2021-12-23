@@ -3514,7 +3514,11 @@ h4.cart-title {
 	color:#000;
 }
 .blog-media {
-	margin-bottom:30px;
+	margin-bottom: 30px;
+    max-height: 600px;
+    display: block;
+    overflow: hidden;
+
 }
 .pr-tags li {
 	float:left;

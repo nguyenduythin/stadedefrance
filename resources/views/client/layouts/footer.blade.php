@@ -34,9 +34,9 @@
                         <div class="footer-widget-content">
                             <div class="footer-contacts footer-box fl-wrap">
                                 <ul>
-                                    <li><span>Call :</span><a href="#">+489756412322</a> , <a href="#">+56897456123</a></li>
-                                    <li><span>Write  :</span><a href="#">yourmail@domain.com</a></li>
-                                    <li><span>Find us : </span><a href="#">USA 27TH Brooklyn NY</a></li>
+                                    <li><span>Call :</span><a href="#">+092.189.8999</a> , <a href="#">+ 096.872.0220</a></li>
+                                    <li><span>Write  :</span><a href="#">stadedefrancestore@domain.com</a></li>
+                                    <li><span>Find us : </span><a href="#">Thành Phố Bắc Ninh - Tỉnh Bắc Ninh.</a></li>
                                 </ul>
                             </div>
                             <a href="contacts.html" class="footer-widget-content-link">Get in Touch</a>                                                    	
@@ -65,7 +65,7 @@
         </div>
         <!-- footer-widget-wrap end-->
         <div class="footer-bottom fl-wrap">
-            <div class="copyright">&#169; Restabook 2020 . All rights reserved. </div>
+            <div class="copyright">&#169; Stadedefrance 2022 . All rights reserved. </div>
             <div class="to-top"><span>Back To Top </span><i class="fal fa-angle-double-up"></i></div>
         </div>
     </div>
