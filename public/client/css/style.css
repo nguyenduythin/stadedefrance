@@ -4783,3 +4783,6 @@ section {
 	border-radius: 10px; 
 	border: 1px dotted #C19D60;
 }
+.error{
+	color: red !important;
+}

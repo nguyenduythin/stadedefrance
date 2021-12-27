@@ -1,5 +1,5 @@
 @extends('client.layouts.main')
-@section('title', 'Home')
+@section('title', '')
 @section('content')
 
     <!-- hero-wrap-->
@@ -110,6 +110,7 @@
                                 <video width="100%" class="video-style" height="130%" controls autoplay onloadstart="this.volume=0.5">
                                 <source src="{{ asset('storage/Stadedefrance.mp4')}}" type="video/mp4">
                                 </video>
+                                
                             </div> 
                           
                             <div class="images-collage-item" style="width:65%" data-position-left="68"

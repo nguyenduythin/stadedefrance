@@ -52,6 +52,8 @@
 
 
 <script src="{{ asset('admin/vendors/js/moment/moment.js') }}"></script>
+
+
 <script>
      $('#logout-admin').on('click', function() {
     $.ajax({

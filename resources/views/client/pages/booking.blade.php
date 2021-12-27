@@ -17,7 +17,7 @@
             <div class="reservation-wrap">
                 <div id="reserv-message"></div>
                 <form class="custom-form" method="post" action="{{ route('booking.add.api.client') }}"
-                    name="reservationform" id="bookingForm">
+                    name="reservationform" id="reservationform">
                     @csrf
                     <fieldset>
                         <div class="row">
@@ -35,7 +35,7 @@
                                 <div class="fl-wrap">
                                     <select name="persons" id="persons" data-placeholder="Persons"
                                         class="chosen-select no-search-select">
-                                        <option data-display="Persons" value="">Any</option>
+                                        <option data-display="Persons" value="0">Any</option>
                                         <option value="1">1 Person</option>
                                         <option value="2">2 People</option>
                                         <option value="3">3 People</option>
@@ -56,7 +56,7 @@
                                 <div class="fl-wrap">
                                     <select name="time" id="time" data-placeholder="Time"
                                         class="chosen-select no-search-select">
-                                        <option data-display="Time" value="">Any</option>
+                                        <option data-display="Time" value="default">Any</option>
                                         <option value="10:00">10:00 am</option>
                                         <option value="11:00">11:00 am</option>
                                         <option value="12:00">12:00 pm</option>
@@ -88,8 +88,35 @@
 </div>
 @section('script')
 <script>
+//   $.extend($.validator.messages, {
+//     required: "Trường này không để trống!",
+//     remote: "Please fix this field.",
+//     email: "Please enter a valid email address.",
+//     url: "Please enter a valid URL.",
+//     date: "Please enter a valid date.",
+//     dateISO: "Please enter a valid date (ISO).",
+//     number: "Please enter a valid number.",
+//     digits: "Please enter only digits.",
+//     creditcard: "Please enter a valid credit card number.",
+//     equalTo: "Please enter the same value again.",
+//     accept: "Please enter a value with a valid extension.",
+//     maxlength: $.validator.format("Please enter no more than {0} characters."),
+//     minlength: $.validator.format("Please enter at least {0} characters."),
+//     rangelength: $.validator.format("Please enter a value between {0} and {1} characters long."),
+//     range: $.validator.format("Please enter a value between {0} and {1}."),
+//     max: $.validator.format("Please enter a value less than or equal to {0}."),
+//     min: $.validator.format("Please enter a value greater than or equal to {0}.")
+// });
 
-var a = $('#bookingForm');
+
+$.validator.addMethod("valueNotEquals", function(value, element, arg){
+    console.log(arg);
+  return arg !== value;
+ }, "Value must not equal arg.");
+ 
+$('#time').val();
+console.log($('#time').val())
+var a = $('#reservationform');
 a.validate({
     errorClass: "error",
     rules: {
@@ -103,19 +130,35 @@ a.validate({
             required: !0
         },
         "date": {
-            required: !0,
-        },
-        "persons": {
-            required: !0,
-        },
-
-        "time": {
-            required: !0,
-        },
-        "message": {
             required: !0
         },
+        "persons": {
+            min: 1
+        },
+        "time": {
+           valueNotEquals: "default"
+        },
     },
+    messages: {
+        "full_name": {
+            required: "Tên không để trống!"
+        },
+            "email": {
+            required: "Email không để trống!"
+        },
+        "phone": {
+            required: "Số điện thoại không để trống!"
+        },
+        "date": {
+            required: "Ngày không để trống!"
+        },
+        "persons": {
+            valueNotEquals: "Số người không để trống!"
+        },
+        "time": {
+            valueNotEquals: "Thời gian không để trống!"
+        },
+    }
 }),
 a.on("submit", function(e) {
     e.preventDefault();

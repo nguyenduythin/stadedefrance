@@ -1,5 +1,5 @@
 @extends('client.layouts.main')
-@section('title', 'Gallery')
+@section('title', '- Gallery')
 @section('content')
   <!-- content  -->	
   <div class="content">

@@ -333,6 +333,7 @@ a.length && (a.validate({
           rules: {
               "name": { required: !0, uniquePName:true },
           },
+
       }),
       a.on("submit", function (e) {
           e.preventDefault();
