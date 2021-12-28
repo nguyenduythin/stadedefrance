@@ -390,10 +390,10 @@ function initRestabook() {
                 nextEl: '.fs-slider-button-next',
                 prevEl: '.fs-slider-button-prev',
             },
-            // autoplay: {
-            //     delay: 3500,
-            //     disableOnInteraction: false
-            // },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            },
 
         });
         setTimeout(function () {
@@ -555,7 +555,10 @@ function initRestabook() {
         autoUpdateInput: false,
         parentEl: $(".date-container2"),
         singleDatePicker: true,
-        timePicker: false,
+        // timePicker: true,
+        // timePicker24Hour: true,
+        // timePickerIncrement : 30,
+        // opens: 'right',
         locale: {
             cancelLabel: 'Clear'
         }

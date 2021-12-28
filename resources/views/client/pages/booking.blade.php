@@ -1,5 +1,4 @@
-
-<div class="reservation-modal-wrap" >
+<div class="reservation-modal-wrap">
     <div class="reserv-overlay crm">
         <div class="cd-reserv-overlay-layer" data-frame="25">
             <div class="reserv-overlay-layer"></div>
@@ -25,57 +24,26 @@
                                 <input type="text" name="full_name" id="full_name" placeholder="Your Name *" value="" />
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" name="email" id="email" placeholder="Email Address *"
-                                    value="" />
+                                <input type="email" name="email" id="email" placeholder="Email Address *" value="" />
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" name="phone" id="phone" placeholder="Phone *" value="" />
                             </div>
                             <div class="col-sm-6">
-                                <div class="fl-wrap">
-                                    <select name="persons" id="persons" data-placeholder="Persons"
-                                        class="chosen-select no-search-select">
-                                        <option data-display="Persons" value="0">Any</option>
-                                        <option value="1">1 Person</option>
-                                        <option value="2">2 People</option>
-                                        <option value="3">3 People</option>
-                                        <option value="4">4 People</option>
-                                        <option value="5">5 People</option>
-                                        <option value="Banquet">Banquet</option>
-                                    </select>
-                                </div>
+                                <input type="text" min="1" max="20" name="persons" id="persons" placeholder="persons *"
+                                    value="" />
+                            </div>
+                            <div class="col-sm-6" style="position: relative;">
+                                <input type="text" placeholder="Date" id="res_date" autocomplete="off" name="date"
+                                    value="" />
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" name="time"  autocomplete="off" class="flatpickr-time flatpickr-time-input text-start" placeholder="HH:MM" />
                             </div>
                             <div class="clearfix"></div>
-                            <div class="col-sm-6">
-                                <div class="date-container2 fl-wrap">
-                                    <input type="text" placeholder="Date" id="res_date" autocomplete="off" name="date"
-                                        value="" />
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="fl-wrap">
-                                    <select name="time" id="time" data-placeholder="Time"
-                                        class="chosen-select no-search-select">
-                                        <option data-display="Time" value="default">Any</option>
-                                        <option value="10:00">10:00 am</option>
-                                        <option value="11:00">11:00 am</option>
-                                        <option value="12:00">12:00 pm</option>
-                                        <option value="1:00">1:00 pm</option>
-                                        <option value="2:00">2:00 pm</option>
-                                        <option value="3:00">3:00 pm</option>
-                                        <option value="4:00">4:00 pm</option>
-                                        <option value="5:00">5:00 pm</option>
-                                        <option value="6:00">6:00 pm</option>
-                                        <option value="7:00">7:00 pm</option>
-                                        <option value="8:00">8:00 pm</option>
-                                        <option value="9:00">9:00 pm</option>
-                                        <option value="10:00">10:00 pm</option>
-                                    </select>
-                                </div>
-                            </div>
+
                         </div>
-                        <textarea name="message" id="message" cols="30" rows="3"
-                            placeholder="Your Message:"></textarea>
+                        <textarea class="content-ip" name="message" id="message" cols="30" rows="3" placeholder="Your Message:"></textarea>
                         <div class="clearfix"></div>
                         <button type="submit" class="btn color-bg" id="reservation-submit">Reserve Table <i
                                 class="fal fa-long-arrow-right"></i></button>
@@ -88,6 +56,7 @@
 </div>
 @section('script')
 <script>
+    $('.flatpickr-time').flatpickr({ enableTime: !0, noCalendar: !0 });
 //   $.extend($.validator.messages, {
 //     required: "Trường này không để trống!",
 //     remote: "Please fix this field.",
@@ -107,15 +76,6 @@
 //     max: $.validator.format("Please enter a value less than or equal to {0}."),
 //     min: $.validator.format("Please enter a value greater than or equal to {0}.")
 // });
-
-
-$.validator.addMethod("valueNotEquals", function(value, element, arg){
-    console.log(arg);
-  return arg !== value;
- }, "Value must not equal arg.");
- 
-$('#time').val();
-console.log($('#time').val())
 var a = $('#reservationform');
 a.validate({
     errorClass: "error",
@@ -127,16 +87,18 @@ a.validate({
             required: !0
         },
         "phone": {
-            required: !0
+            required: !0,
+            digits:true,minlength:10,maxlength:10
         },
         "date": {
             required: !0
         },
         "persons": {
-            min: 1
+            required: !0,
+            number: true
         },
         "time": {
-           valueNotEquals: "default"
+            required: !0,
         },
     },
     messages: {
@@ -144,19 +106,25 @@ a.validate({
             required: "Tên không để trống!"
         },
             "email": {
-            required: "Email không để trống!"
+            required: "Email không để trống!",
+            email: "Email chưa đúng định dạng!"
         },
         "phone": {
-            required: "Số điện thoại không để trống!"
+            required: "Số điện thoại không để trống!",
+            minlength : "Định dạng số điện thoại 10 số!",
+            maxlength : "Định dạng số điện thoại 10 số!"
+
         },
         "date": {
             required: "Ngày không để trống!"
         },
         "persons": {
-            valueNotEquals: "Số người không để trống!"
+            required: "Số người không để trống!",
+            min: "Số người cần là số và lớn hơn 1!" ,
+            max: "Số người nhỏ hơn 20!"
         },
         "time": {
-            valueNotEquals: "Thời gian không để trống!"
+            required: "Thời gian không để trống!"
         },
     }
 }),

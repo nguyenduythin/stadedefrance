@@ -3252,6 +3252,7 @@ h4.cart-title {
 }
 .custom-form textarea,
 .custom-form input[type="text"],
+.custom-form input[type="time"],
 .custom-form input[type=email],
 .custom-form input[type=password] {
 	float: left;
@@ -3288,7 +3289,7 @@ h4.cart-title {
 	border: 1px solid #e1e1e1;
 }
 .custom-form input {
-	margin-bottom: 20px;
+	margin-top: 26px;
 }
 .custom-form .btn {
 	border:none;
@@ -3296,7 +3297,7 @@ h4.cart-title {
 	cursor:pointer;
 	margin-top:40px;
 }
-.custom-form  textarea:focus , .custom-form input[type="text"]:focus  , .custom-form  input[type=email]:focus  , .custom-form  input[type=password]:focus   {
+.custom-form  textarea:focus , .custom-form input[type="text"]:focus , .custom-form input[type="time"]:focus  , .custom-form  input[type=email]:focus  , .custom-form  input[type=password]:focus   {
 	background:#fff;
 	box-shadow: 0px 10px 14px 0px rgba(12, 0, 46, 0.06);
 }
@@ -4785,4 +4786,23 @@ section {
 }
 .error{
 	color: red !important;
+	text-align: left !important;
+}
+.text-start{
+	text-align: left!important;
+	
+}
+.flatpickr-time-input{
+	padding: 22px 20px !important;
+}
+.content-ip{
+	margin-top:26px
+}
+.col-sm-6 {
+	text-align: left !important;
+}
+.col-sm-6 > label.error {
+	position: absolute;
+    left: 13px;
+    bottom:-15px;
 }
