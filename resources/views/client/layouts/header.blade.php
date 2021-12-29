@@ -3,7 +3,7 @@
     <div class="header-top">
         <div class="container">
             <div class="lang-wrap"><a href="#" class="act-lang">En</a><span>/</span><a href="#">Vi</a></div>
-            <div class="header-top_contacts"><a href="#"><span>Call now:</span> +0921898999</a><a href="#"><span>Email :</span> stadedefrancestore@domain.com</a></div>
+            <div class="header-top_contacts"><a href="#"><span>Call now:</span> +0921898999</a><a href="#"><span>Email :</span> stadedefrancebn@gmail.com</a></div>
         </div>
     </div>
     <!--header-top end -->
@@ -11,7 +11,7 @@
     <div class="header-inner  fl-wrap">
         <div class="container">
             <div class="header-container fl-wrap">
-                <a href="{{ route('home') }}" class="logo-holder"><img src="{{ asset('client/images/logo.png') }}" alt=""></a>
+                <a href="{{ route('home') }}" class="logo-holder"><img src="{{ asset('client/images/logo-full.png') }}" width="80" alt=""></a>
                 <div class="show-reserv_button show-rb"><span>Booking Now</span> <i class="fal fa-bookmark"></i></div>
                 <div class="show-share-btn showshare htact"><i class="fal fa-bullhorn"></i> <span class="header-tooltip">Share</span></div>
                 {{-- <div class="show-cart sc_btn htact"><i class="fal fa-shopping-bag"></i><span class="show-cart_count">3</span><span class="header-tooltip">Your Cart</span></div> --}}

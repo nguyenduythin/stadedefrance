@@ -283,12 +283,12 @@ blockquote p {
 	float:left;
 	height:25px;
 	position:relative;
-	top:23px;
+	top:4px;
 	left:25px;
 }
 .logo-holder img {
 	width:auto;
-	height:25px;
+	height:60px;
 }
 .header-inner {
 	top:50px;
@@ -4805,4 +4805,8 @@ section {
 	position: absolute;
     left: 13px;
     bottom:-15px;
+}
+.sz-cl-icon {
+font-size: 100px;
+color: #c19d60;
 }
